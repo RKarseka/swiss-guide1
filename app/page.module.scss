@@ -1,0 +1,36 @@
+@import './styles/variables';
+
+.main {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: $spacing-12 $spacing-6;
+}
+
+.content {
+  text-align: center;
+}
+
+.title {
+  font-size: $font-size-3xl;
+  font-weight: bold;
+  margin-bottom: $spacing-6;
+}
+
+.description {
+  font-size: $font-size-lg;
+  color: $color-text-secondary;
+  margin-bottom: $spacing-8;
+}
+
+.button {
+  display: inline-block;
+  background-color: $color-primary;
+  color: $color-white;
+  padding: $spacing-3 $spacing-8;
+  border-radius: 0.5rem;
+  transition: background-color $transition-base;
+
+  &:hover {
+    background-color: darken($color-primary, 10%);
+  }
+} 

@@ -1,0 +1,26 @@
+@import './variables';
+@import 'reset';
+
+// Функция для преобразования HEX в RGB
+@function hexToRGB($hex) {
+  @return red($hex), green($hex), blue($hex);
+}
+
+:root {
+  --foreground-rgb: #{hexToRGB($color-text)};
+  --background-rgb: #{hexToRGB($color-background)};
+}
+
+/* Глобальные стили */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+} 

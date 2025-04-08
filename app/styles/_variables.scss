@@ -1,0 +1,58 @@
+// Цвета
+$color-primary: #3b82f6;
+$color-white: #ffffff;
+$color-text: #000000;  // Основной цвет текста
+$color-text-secondary: #4b5563;
+$color-border: #e5e7eb;
+$color-gray-100: #f3f4f6;
+$color-background: #f9fafb;  // Цвет фона
+
+// Размеры
+$spacing-1: 0.25rem;
+$spacing-2: 0.5rem;
+$spacing-3: 0.75rem;
+$spacing-4: 1rem;
+$spacing-6: 1.5rem;
+$spacing-8: 2rem;
+$spacing-12: 3rem;
+
+// Шрифты
+$font-size-base: 1rem;
+$font-size-lg: 1.125rem;
+$font-size-xl: 1.25rem;
+$font-size-2xl: 1.5rem;
+$font-size-3xl: 1.875rem;
+
+// Границы
+$border-radius-sm: 0.125rem;    // 2px
+$border-radius-md: 0.375rem;    // 6px
+$border-radius-lg: 0.5rem;      // 8px
+$border-radius-xl: 0.75rem;     // 12px
+$border-radius-2xl: 1rem;       // 16px
+$border-radius-full: 9999px;    // Круглая граница
+
+// Контейнер
+$container-max-width: 1200px;
+
+// Точки перелома
+$breakpoint-sm: 640px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1280px;
+
+// Анимации
+$transition-base: 0.3s ease;
+$transition-fast: 0.15s ease;
+$transition-slow: 0.5s ease;
+
+// Typography
+$font-size-2xl: 2rem;
+$font-size-3xl: 3rem;
+
+// Layout
+$header-height: 4.5rem;
+
+// Shadows
+$shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+$shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1); 

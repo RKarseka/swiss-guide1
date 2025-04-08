@@ -1,12 +1,15 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
+import "./styles/globals.scss";
+import Header from "./components/Header";
+import { LanguageProvider } from "./i18n/LanguageContext";
+import styles from "./layout.module.scss";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Next.js App",
-  description: "Next.js application",
+  title: "Swiss Guide - Ваш путеводитель по Швейцарии",
+  description: "Откройте для себя лучшие туры и маршруты по Швейцарии",
 };
 
 export default function RootLayout({
@@ -16,7 +19,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.className} ${styles.body}`}>
+        <LanguageProvider>
+          <Header />
+          <div className={styles.content}>
+            {children}
+          </div>
+        </LanguageProvider>
+      </body>
     </html>
   );
 }
