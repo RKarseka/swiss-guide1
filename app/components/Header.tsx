@@ -7,6 +7,7 @@ import { useLanguage } from '../i18n/LanguageContext';
 import LanguageSwitcher from './LanguageSwitcher';
 import BurgerMenu from './BurgerMenu';
 import styles from './Header.module.scss';
+import clsx from 'clsx';
 
 const Header: FC = () => {
   const pathname = usePathname();
@@ -36,6 +37,22 @@ const Header: FC = () => {
               className={`${styles.link} ${isActive('/tours')}`}
             >
               {translations.nav.tours}
+            </Link>
+            <Link
+              href="/reviews"
+              className={clsx(styles.link, {
+                [styles.active]: isActive('/reviews')
+              })}
+            >
+              Reviews
+            </Link>
+            <Link
+              href="/blogs"
+              className={clsx(styles.link, {
+                [styles.active]: isActive('/blogs')
+              })}
+            >
+              Blogs
             </Link>
             <LanguageSwitcher />
           </div>
