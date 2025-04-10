@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./styles/globals.scss";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 import { LanguageProvider } from "./i18n/LanguageContext";
 import styles from "./layout.module.scss";
 
@@ -25,6 +26,7 @@ export default function RootLayout({
           <div className={styles.content}>
             {children}
           </div>
+          <Footer />
         </LanguageProvider>
       </body>
     </html>

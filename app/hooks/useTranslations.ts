@@ -1,14 +1,7 @@
-import { useParams } from 'next/navigation';
-import { en } from '../i18n/locales/en';
-import { ru } from '../i18n/locales/ru';
+import { useLanguage } from '../i18n/LanguageContext';
+import { translations } from '../i18n/translations';
 
-const translations = {
-  en,
-  ru,
-};
-
-export const useTranslations = () => {
-  const params = useParams();
-  const locale = (params?.lang as string) || 'en';
-  return translations[locale as keyof typeof translations];
-}; 
+export function useTranslations() {
+  const { language } = useLanguage();
+  return translations[language];
+} 
