@@ -13,39 +13,59 @@ export default function Footer() {
       <div className={commonStyles.container}>
         <div className={styles.content}>
           <div className={styles.about}>
-            <h3>О нас</h3>
-            <p>Swiss Guide - ваш надежный гид по Швейцарии.</p>
+            <h3>{t('footer.about')}</h3>
+            <p>{t('footer.description')}</p>
           </div>
           <div className={styles.links}>
-            <h3>Ссылки</h3>
+            <h3>{t('footer.links')}</h3>
             <ul>
-              <li><a href="/tours">Туры</a></li>
-              <li><a href="/reviews">Отзывы</a></li>
-              <li><a href="/blogs">Блоги</a></li>
+              <li><a href="/tours">{t('nav.tours')}</a></li>
+              <li><a href="/reviews">{t('nav.reviews')}</a></li>
+              <li><a href="/blogs">{t('nav.blogs')}</a></li>
             </ul>
           </div>
           <div className={styles.contact}>
-            <h3>Контакты</h3>
-            <p>Email: info@swiss-guide.com</p>
-            <p>Телефон: +41 123 456 789</p>
+            <h3>{t('footer.contact')}</h3>
+            <p>{t('footer.email')}: info@swiss-guide.com</p>
+            <p>{t('footer.phone')}: +41 123 456 789</p>
             <div className={styles.socialLinks}>
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+              <a 
+                href="https://facebook.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                aria-label={t('footer.socialMedia.facebook')}
+              >
                 <FaFacebook className={styles.socialIcon} />
               </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+              <a 
+                href="https://instagram.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                aria-label={t('footer.socialMedia.instagram')}
+              >
                 <FaInstagram className={styles.socialIcon} />
               </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+              <a 
+                href="https://twitter.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                aria-label={t('footer.socialMedia.twitter')}
+              >
                 <FaTwitter className={styles.socialIcon} />
               </a>
-              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
+              <a 
+                href="https://youtube.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                aria-label={t('footer.socialMedia.youtube')}
+              >
                 <FaYoutube className={styles.socialIcon} />
               </a>
             </div>
           </div>
         </div>
         <div className={styles.copyright}>
-          <p>&copy; {new Date().getFullYear()} Swiss Guide. Все права защищены.</p>
+          <p>&copy; {new Date().getFullYear()} {t('common.siteName')}. {t('footer.rights')}</p>
         </div>
       </div>
     </footer>

@@ -37,7 +37,16 @@ export const translations = {
       description: 'Swiss Guide - ваш надежный гид по Швейцарии.',
       links: 'Ссылки',
       contact: 'Контакты',
-      rights: 'Все права защищены'
+      rights: 'Все права защищены',
+      email: 'Email',
+      phone: 'Телефон',
+      followUs: 'Подпишитесь на нас',
+      socialMedia: {
+        facebook: 'Facebook',
+        instagram: 'Instagram',
+        twitter: 'Twitter',
+        youtube: 'YouTube'
+      }
     }
   },
   en: {
@@ -78,7 +87,16 @@ export const translations = {
       description: 'Swiss Guide is your reliable guide to Switzerland.',
       links: 'Links',
       contact: 'Contact',
-      rights: 'All rights reserved'
+      rights: 'All rights reserved',
+      email: 'Email',
+      phone: 'Phone',
+      followUs: 'Follow Us',
+      socialMedia: {
+        facebook: 'Facebook',
+        instagram: 'Instagram',
+        twitter: 'Twitter',
+        youtube: 'YouTube'
+      }
     }
   }
 }; 
