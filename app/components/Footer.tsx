@@ -4,9 +4,15 @@ import { useTranslations } from '../hooks/useTranslations';
 import styles from '../styles/Footer.module.scss';
 import commonStyles from '../styles/common.module.scss';
 import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
+import { useState, useEffect } from 'react';
 
 export default function Footer() {
   const t = useTranslations();
+  const [currentYear, setCurrentYear] = useState<number>(2024);
+
+  useEffect(() => {
+    setCurrentYear(new Date().getFullYear());
+  }, []);
 
   return (
     <footer className={styles.footer}>
@@ -65,7 +71,7 @@ export default function Footer() {
           </div>
         </div>
         <div className={styles.copyright}>
-          <p>&copy; {new Date().getFullYear()} {t('common.siteName')}. {t('footer.rights')}</p>
+          <p>&copy; {currentYear} {t('common.siteName')}. {t('footer.rights')}</p>
         </div>
       </div>
     </footer>
