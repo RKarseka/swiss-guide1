@@ -1,0 +1,114 @@
+@import 'variables';
+@import 'mixins';
+
+// Reset and base styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: $font-size-base;
+  font-family: $font-family-base;
+  line-height: $line-height-base;
+}
+
+body {
+  background-color: $light-color;
+  color: $dark-color;
+}
+
+// Typography
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: $spacing-md;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+p {
+  margin-bottom: $spacing-md;
+}
+
+// Links
+a {
+  color: $primary-color;
+  text-decoration: none;
+  transition: $transition-base;
+
+  &:hover {
+    color: darken($primary-color, 10%);
+  }
+}
+
+// Buttons
+.btn {
+  @include button-base;
+
+  &-primary {
+    @include button-variant($primary-color, white);
+  }
+
+  &-secondary {
+    @include button-variant($secondary-color, white);
+  }
+
+  &-success {
+    @include button-variant($success-color, white);
+  }
+
+  &-danger {
+    @include button-variant($danger-color, white);
+  }
+}
+
+// Container
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+
+  @include respond-to(md) {
+    padding: 0 $spacing-lg;
+  }
+}
+
+// Grid
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -$spacing-md;
+}
+
+.col {
+  flex: 1 0 100%;
+  padding: $spacing-md;
+
+  @include respond-to(sm) {
+    flex: 1 0 50%;
+  }
+
+  @include respond-to(md) {
+    flex: 1 0 33.333%;
+  }
+
+  @include respond-to(lg) {
+    flex: 1 0 25%;
+  }
+} 
