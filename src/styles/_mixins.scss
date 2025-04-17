@@ -1,0 +1,77 @@
+// Миксины для медиа-запросов
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (max-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "Неизвестный брейкпоинт: #{$breakpoint}";
+  }
+}
+
+// Миксины для флексбокса
+@mixin flex($direction: row, $justify: flex-start, $align: stretch) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin flex-center {
+  @include flex(row, center, center);
+}
+
+@mixin flex-between {
+  @include flex(row, space-between, center);
+}
+
+// Миксины для типографии
+@mixin font-size($size) {
+  @if map-has-key($font-sizes, $size) {
+    font-size: map-get($font-sizes, $size);
+  } @else {
+    @warn "Неизвестный размер шрифта: #{$size}";
+  }
+}
+
+@mixin font-weight($weight) {
+  @if map-has-key($font-weights, $weight) {
+    font-weight: map-get($font-weights, $weight);
+  } @else {
+    @warn "Неизвестный вес шрифта: #{$weight}";
+  }
+}
+
+// Миксины для теней
+@mixin box-shadow($level) {
+  @if map-has-key($shadows, $level) {
+    box-shadow: map-get($shadows, $level);
+  } @else {
+    @warn "Неизвестный уровень тени: #{$level}";
+  }
+}
+
+// Миксины для анимаций
+@mixin transition($properties...) {
+  $transitions: ();
+  @each $property in $properties {
+    $transitions: append($transitions, $property 0.3s ease, comma);
+  }
+  transition: $transitions;
+}
+
+// Миксины для позиционирования
+@mixin absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin fixed-full {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+} 
