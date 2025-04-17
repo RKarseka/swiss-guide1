@@ -1,0 +1,25 @@
+@import '@/styles/variables';
+@import '@/styles/mixins';
+
+.container {
+  max-width: map-get($breakpoints, large);
+  margin: 0 auto;
+  padding: 2rem map-get($spacing-sizes, 4);
+
+  @include respond-to(tablet) {
+    padding: 1rem map-get($spacing-sizes, 3);
+  }
+}
+
+.title {
+  font-size: 2.5rem;
+  color: map-get($colors, dark);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.reviews {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+} 
