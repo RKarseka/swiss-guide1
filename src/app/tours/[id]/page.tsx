@@ -1,10 +1,8 @@
-'use client';
-
-import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './page.module.scss';
 import BookingModal from '@/components/BookingModal/BookingModal';
+import TourActions from '@/components/TourActions/TourActions';
 
 interface Tour {
   id: string;
@@ -21,15 +19,6 @@ interface Tour {
     requirements: string[];
   };
 }
-
-type PageParams = {
-  id: string;
-};
-
-type Props = {
-  params: PageParams;
-  searchParams: Record<string, string | string[] | undefined>;
-};
 
 const tours: Record<string, Tour> = {
   '1': {
@@ -118,8 +107,13 @@ const tours: Record<string, Tour> = {
   },
 };
 
-export default function TourPage({ params }: Props) {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+export default async function TourPage({
+  params,
+  searchParams,
+}: {
+  params: { id: string };
+  searchParams: Record<string, string | string[] | undefined>;
+}) {
   const tour = tours[params.id];
 
   if (!tour) {
@@ -220,12 +214,10 @@ export default function TourPage({ params }: Props) {
         <Link href='/tours' className={styles.backButton}>
           Назад к турам
         </Link>
-        <button className={styles.bookButton} onClick={() => setIsModalOpen(true)}>
-          Забронировать тур
-        </button>
+        <button className={styles.bookButton}>Забронировать тур</button>
       </div>
 
-      <BookingModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <TourActions />
     </div>
   );
 }

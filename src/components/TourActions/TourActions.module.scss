@@ -1,0 +1,36 @@
+@import '@/styles/variables';
+@import '@/styles/mixins';
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.backButton {
+  padding: 0.75rem 1.5rem;
+  border: 1px solid map-get($colors, primary);
+  border-radius: 8px;
+  color: map-get($colors, primary);
+  text-decoration: none;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: map-get($colors, primary);
+    color: white;
+  }
+}
+
+.bookButton {
+  padding: 0.75rem 1.5rem;
+  background-color: map-get($colors, primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: darken(map-get($colors, primary), 10%);
+  }
+} 
