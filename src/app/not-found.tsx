@@ -13,13 +13,13 @@ export default function NotFound() {
         <h1 className={styles.title}>404</h1>
         <h2 className={styles.subtitle}>Страница не найдена</h2>
         <p className={styles.description}>
-          К сожалению, запрашиваемая вами страница не существует или была перемещена.
-          Пожалуйста, вернитесь на главную страницу.
+          К сожалению, запрашиваемая вами страница не существует или была перемещена. Пожалуйста, вернитесь на главную
+          страницу.
         </p>
-        <Link href="/" className={styles.button}>
+        <Link href='/' className={styles.button}>
           Вернуться на главную
         </Link>
       </div>
     </div>
   );
-} 
+}
