@@ -5,7 +5,10 @@
   background-color: map-get($colors, dark);
   color: map-get($colors, light);
   padding: map-get($spacing-sizes, 4) 0 map-get($spacing-sizes, 2);
-  margin-top: auto;
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  left: 0;
 }
 
 .container {
