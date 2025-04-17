@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "@/styles/main.scss";
 import Navbar from "@/components/Navbar/Navbar";
+import Footer from "@/components/Footer/Footer";
 
 const inter = Inter({ subsets: ['latin', 'cyrillic'] });
 
@@ -19,9 +20,10 @@ export default function RootLayout({
     <html lang="ru">
       <body className={inter.className}>
         <Navbar />
-        <main style={{ marginTop: '80px' }}>
+        <main style={{ marginTop: '80px', minHeight: 'calc(100vh - 80px - 400px)' }}>
           {children}
         </main>
+        <Footer />
       </body>
     </html>
   );
