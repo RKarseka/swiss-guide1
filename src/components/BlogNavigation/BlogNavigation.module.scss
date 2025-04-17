@@ -1,0 +1,33 @@
+@import '@/styles/variables';
+@import '@/styles/mixins';
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid #eee;
+}
+
+.link {
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid map-get($colors, primary);
+  border-radius: 8px;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: map-get($colors, primary);
+    
+    .label {
+      color: white;
+    }
+  }
+}
+
+.label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: map-get($colors, primary);
+  transition: color 0.2s ease;
+} 
