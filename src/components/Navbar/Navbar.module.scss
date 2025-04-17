@@ -1,0 +1,126 @@
+@import '@/styles/variables';
+@import '@/styles/mixins';
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: map-get($colors, light);
+  box-shadow: map-get($shadows, small);
+  z-index: 1000;
+  padding: map-get($spacing-sizes, 2) 0;
+}
+
+.container {
+  @include flex-between;
+  max-width: map-get($breakpoints, large);
+  margin: 0 auto;
+  padding: 0 map-get($spacing-sizes, 3);
+}
+
+.logo {
+  font-size: map-get($font-sizes, large);
+  font-weight: map-get($font-weights, bold);
+  color: map-get($colors, primary);
+  text-decoration: none;
+}
+
+.menu {
+  @include flex;
+  gap: map-get($spacing-sizes, 3);
+
+  @include respond-to(tablet) {
+    display: none;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background-color: map-get($colors, light);
+    padding: map-get($spacing-sizes, 3);
+    flex-direction: column;
+    align-items: center;
+    box-shadow: map-get($shadows, medium);
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+
+    &.active {
+      display: flex;
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
+
+.navLink {
+  color: map-get($colors, dark);
+  text-decoration: none;
+  font-weight: map-get($font-weights, medium);
+  @include transition(color);
+
+  &:hover {
+    color: map-get($colors, primary);
+  }
+
+  &.active {
+    color: map-get($colors, primary);
+  }
+}
+
+.menuButton {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: map-get($spacing-sizes, 2);
+  width: 30px;
+  height: 30px;
+  position: relative;
+  z-index: 1001;
+
+  @include respond-to(tablet) {
+    display: block;
+  }
+}
+
+.menuIcon {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: map-get($colors, dark);
+  position: relative;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background-color: map-get($colors, dark);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+
+  &::before {
+    top: -8px;
+  }
+
+  &::after {
+    bottom: -8px;
+  }
+
+  .active & {
+    background-color: transparent;
+
+    &::before {
+      transform: rotate(45deg);
+      top: 0;
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+      bottom: 0;
+    }
+  }
+} 
