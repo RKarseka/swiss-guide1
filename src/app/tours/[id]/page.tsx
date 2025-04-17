@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './page.module.scss';
-import BookingModal from '@/components/BookingModal/BookingModal';
 import TourActions from '@/components/TourActions/TourActions';
 
 interface Tour {
@@ -107,13 +106,7 @@ const tours: Record<string, Tour> = {
   },
 };
 
-export default async function TourPage({
-  params,
-  searchParams,
-}: {
-  params: { id: string };
-  searchParams: Record<string, string | string[] | undefined>;
-}) {
+export default async function TourPage(params: any) {
   const tour = tours[params.id];
 
   if (!tour) {
