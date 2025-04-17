@@ -22,12 +22,14 @@ interface Tour {
   };
 }
 
-interface PageProps {
-  params: {
-    id: string;
-  };
-  searchParams?: Record<string, string | string[] | undefined>;
-}
+type PageParams = {
+  id: string;
+};
+
+type Props = {
+  params: PageParams;
+  searchParams: Record<string, string | string[] | undefined>;
+};
 
 const tours: Record<string, Tour> = {
   '1': {
@@ -116,7 +118,7 @@ const tours: Record<string, Tour> = {
   },
 };
 
-export default function TourPage({ params }: PageProps) {
+export default function TourPage({ params }: Props) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const tour = tours[params.id];
 
