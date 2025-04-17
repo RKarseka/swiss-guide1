@@ -25,15 +25,11 @@ const Navbar = () => {
   return (
     <nav className={styles.navbar}>
       <div className={styles.container}>
-        <Link href="/" className={styles.logo}>
+        <Link href='/' className={styles.logo}>
           Swiss Guide
         </Link>
 
-        <button 
-          className={styles.menuButton}
-          onClick={toggleMenu}
-          aria-label="Toggle menu"
-        >
+        <button className={styles.menuButton} onClick={toggleMenu} aria-label='Toggle menu'>
           <span className={`${styles.menuIcon} ${isMenuOpen ? styles.active : ''}`}></span>
         </button>
 
@@ -42,9 +38,7 @@ const Navbar = () => {
             <Link
               key={item.href}
               href={item.href}
-              className={`${styles.navLink} ${
-                pathname === item.href ? styles.active : ''
-              }`}
+              className={`${styles.navLink} ${pathname === item.href ? styles.active : ''}`}
               onClick={() => setIsMenuOpen(false)}
             >
               {item.label}
@@ -56,4 +50,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar; 
+export default Navbar;
