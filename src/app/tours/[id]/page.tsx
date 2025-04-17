@@ -1,6 +1,10 @@
+'use client';
+
+import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './page.module.scss';
+import BookingModal from '@/components/BookingModal/BookingModal';
 
 interface Tour {
   id: string;
@@ -113,6 +117,7 @@ const tours: Record<string, Tour> = {
 };
 
 export default function TourPage({ params }: PageProps) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const tour = tours[params.id];
 
   if (!tour) {
@@ -213,8 +218,12 @@ export default function TourPage({ params }: PageProps) {
         <Link href='/tours' className={styles.backButton}>
           Назад к турам
         </Link>
-        <button className={styles.bookButton}>Забронировать тур</button>
+        <button className={styles.bookButton} onClick={() => setIsModalOpen(true)}>
+          Забронировать тур
+        </button>
       </div>
+
+      <BookingModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
   );
 }
