@@ -85,42 +85,26 @@
 }
 
 .menuIcon {
-  display: block;
-  width: 24px;
-  height: 2px;
-  background-color: map-get($colors, dark);
-  position: relative;
-  transition: transform 0.3s ease, background-color 0.3s ease;
+  color: map-get($colors, dark);
+  transition: transform 0.3s ease;
 
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    width: 24px;
-    height: 2px;
-    background-color: map-get($colors, dark);
-    transition: transform 0.3s ease, background-color 0.3s ease;
+  path {
+    transition: all 0.3s ease;
+    transform-origin: center;
   }
 
-  &::before {
-    top: -8px;
-  }
-
-  &::after {
-    bottom: -8px;
-  }
-
-  .active & {
-    background-color: transparent;
-
-    &::before {
-      transform: rotate(45deg);
-      top: 0;
+  &.active {
+    .line1 {
+      transform: translateY(6px) rotate(45deg);
     }
 
-    &::after {
-      transform: rotate(-45deg);
-      bottom: 0;
+    .line2 {
+      opacity: 0;
+      transform: scale(0);
+    }
+
+    .line3 {
+      transform: translateY(-6px) rotate(-45deg);
     }
   }
 } 

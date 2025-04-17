@@ -18,6 +18,13 @@ interface Tour {
   };
 }
 
+interface PageProps {
+  params: {
+    id: string;
+  };
+  searchParams?: Record<string, string | string[] | undefined>;
+}
+
 const tours: Record<string, Tour> = {
   '1': {
     id: '1',
@@ -105,7 +112,7 @@ const tours: Record<string, Tour> = {
   },
 };
 
-export default function TourPage({ params }: { params: { id: string } }) {
+export default function TourPage({ params }: PageProps) {
   const tour = tours[params.id];
 
   if (!tour) {
