@@ -41,10 +41,10 @@ export default function AboutGuide() {
             </p>
             <p>
               In my home country I obtained diplomas in Sociology and Marketing and then got an office job that provided
-              me financially but didn't give me the sense of living full live).
+              me financially but didn&apos;t give me the sense of living full live).
             </p>
             <p>
-              I started doing tours when I was living in Madrid, Spain. That's when I realized that working with
+              I started doing tours when I was living in Madrid, Spain. That&apos;s when I realized that working with
               tourists is totally my thing. Each tour is unique and I am trying to adjust it in accordance with your
               wishes. Because I truly believe that every minute of your time with me during the tour must bring you
               maximum impressions!

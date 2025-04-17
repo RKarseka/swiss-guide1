@@ -76,7 +76,7 @@ export default function ToursList() {
         </div>
 
         <div className={styles.customTour}>
-          <h3>Haven't found your dream tour?</h3>
+          <h3>Haven&apos;t found your dream tour?</h3>
           <p>Just contact us and together we will create a customized program for you</p>
           <Link href='/contact' className={styles.contactButton}>
             CONTACT
