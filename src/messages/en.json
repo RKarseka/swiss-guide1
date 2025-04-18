@@ -1,0 +1,28 @@
+{
+  "homepage": {
+    "title": "Swiss Guide",
+    "subtitle": "Tours and Excursions in Switzerland",
+    "welcomeMessage": "Welcome to your Swiss guide"
+  },
+  "navigation": {
+    "home": "Home",
+    "tours": "Tours",
+    "blogs": "Blog",
+    "reviews": "Reviews",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "tours": {
+    "book": "Book",
+    "details": "Details",
+    "duration": "Duration",
+    "price": "Price",
+    "days": "days"
+  },
+  "common": {
+    "readMore": "Read more",
+    "showMore": "Show more",
+    "loading": "Loading...",
+    "error": "An error occurred"
+  }
+} 
