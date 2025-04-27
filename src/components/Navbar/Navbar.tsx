@@ -4,24 +4,26 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import styles from './Navbar.module.scss';
+import navItems from '../../assets/app-data/00header';
+import { useTranslations } from 'next-intl';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
 
-  const navItems = [
-    { href: '/', label: 'Главная' },
-    { href: '/tours', label: 'Туры' },
-    { href: '/about', label: 'О нас' },
-    { href: '/reviews', label: 'Отзывы' },
-    { href: '/blogs', label: 'Блог' },
-    { href: '/contact', label: 'Контакты' },
-  ];
+  // const navItems = [
+  //   { href: '/', label: 'Главная' },
+  //   { href: '/tours', label: 'Туры' },
+  //   { href: '/about', label: 'О нас' },
+  //   { href: '/reviews', label: 'Отзывы' },
+  //   { href: '/blogs', label: 'Блог' },
+  //   { href: '/contact', label: 'Контакты' },
+  // ];
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-
+  const t = useTranslations('header');
   return (
     <nav className={styles.navbar}>
       <div className={styles.container}>
@@ -66,14 +68,14 @@ const Navbar = () => {
         </button>
 
         <div className={`${styles.menu} ${isMenuOpen ? styles.active : ''}`}>
-          {navItems.map((item) => (
+          {navItems.pages.map((item) => (
             <Link
-              key={item.href}
+              key={item.key}
               href={item.href}
               className={`${styles.navLink} ${pathname === item.href ? styles.active : ''}`}
-              onClick={() => setIsMenuOpen(false)}
+              // onClick={() => setIsMenuOpen(false)}
             >
-              {item.label}
+              {t(`navbar.${item.key}`)}
             </Link>
           ))}
         </div>

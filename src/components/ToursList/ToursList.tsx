@@ -1,10 +1,24 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './ToursList.module.scss';
 
-const tours = [
+interface Tour {
+  id: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  image: string;
+  fullWidth?: boolean;
+}
+
+interface ToursListProps {
+  initialTours?: Tour[];
+}
+
+const defaultTours: Tour[] = [
   {
     id: 'geneva',
     title: 'Geneva',
@@ -45,7 +59,13 @@ const tours = [
   },
 ];
 
-export default function ToursList() {
+export default function ToursList({ initialTours = defaultTours }: ToursListProps) {
+  const [tours, setTours] = useState<Tour[]>(initialTours);
+
+  useEffect(() => {
+    setTours(initialTours);
+  }, [initialTours]);
+
   return (
     <section className={styles.container}>
       <div className={styles.content}>

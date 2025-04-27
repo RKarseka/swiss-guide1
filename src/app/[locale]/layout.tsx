@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Noto_Sans } from 'next/font/google';
 import '@/styles/main.scss';
 import Navbar from '@/components/Navbar/Navbar';
 import Footer from '@/components/Footer/Footer';
@@ -8,30 +8,33 @@ import styles from './layout.module.scss';
 import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
+import { getMetadata } from '@/i18n/metadata';
 
-const inter = Inter({ subsets: ['latin', 'cyrillic'] });
+const notoSans = Noto_Sans({
+  weight: ['300', '400', '500', '700'],
+  subsets: ['latin', 'cyrillic'],
+  display: 'swap',
+});
 
-export const metadata: Metadata = {
-  title: 'Swiss Guide - Путеводитель по Швейцарии',
-  description: 'Туры и экскурсии по Швейцарии',
-};
+export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
+  return getMetadata(locale);
+}
 
-export default async function LocaleLayout({
+export default function LocaleLayout({
   children,
-  params,
+  params: { locale },
 }: {
   children: React.ReactNode;
-  params: Promise<{ locale: string }>;
+  params: { locale: string };
 }) {
-  // Ensure that the incoming `locale` is valid
-  const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
+
   return (
     <html lang={locale}>
-      <body className={inter.className}>
-        <NextIntlClientProvider>
+      <body className={notoSans.className}>
+        <NextIntlClientProvider locale={locale}>
           <div className={styles.wrapper}>
             <Navbar />
             <main className={styles.main}>{children}</main>

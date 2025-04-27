@@ -1,4 +1,17 @@
 {
+  "layout": {
+    "title": "Swiss Guide - Switzerland Travel Guide",
+    "description":"Tours and excursions in Switzerland"
+  },
+  "header": {
+    "navbar": {
+      "why": "WHY ME",
+      "tours": "TOURS",
+      "reviews": "REVIEWS",
+      "blog": "BLOG",
+      "contacts": "CONTACTS"
+    }
+  },
   "homepage": {
     "title": "Swiss Guide",
     "subtitle": "Tours and Excursions in Switzerland",
@@ -24,5 +37,8 @@
     "showMore": "Show more",
     "loading": "Loading...",
     "error": "An error occurred"
+  },
+  "ToursPage": {
+    "title": "Our Tours"
   }
 } 
