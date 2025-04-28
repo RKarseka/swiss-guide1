@@ -21,7 +21,43 @@
   color: map-get($colors, red);
   font-weight: map-get($font-weights, sbold);
   font-size: map-get($font-sizes, medium);
+  margin-bottom: 45px;
 }
+
+.duration {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  img {
+    flex-shrink: 0;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.attractions {
+  li {
+    position: relative;
+    padding-left: 20px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: map-get($colors, red);
+    }
+  }
+}
+
+
 
 .container {
   max-width: map-get($breakpoints, large);
@@ -106,17 +142,6 @@
   margin-top: auto;
 }
 
-.duration {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: map-get($colors, secondary);
-  font-size: 1rem;
-
-  svg {
-    color: map-get($colors, primary);
-  }
-}
 
 .price {
   font-size: 1.5rem;
@@ -260,3 +285,4 @@
     background-color: darken(map-get($colors, primary), 10%);
   }
 }
+

@@ -4,6 +4,7 @@ import styles from './page.module.scss';
 import TourActions from '@/components/TourActions/TourActions';
 import tours from '@/assets/app-data/05tours';
 import PageLayout from '@/components/PageLayout/PageLayout';
+import ClockIcon from '@/assets/img/icons/clock.svg';
 
 interface Props {
   params: { id: string; locale: string };
@@ -23,10 +24,22 @@ export default async function TourPage({ params }: Props) {
           </div>
           <div className={styles.rightSide}>
             <div className={styles.cost}>
-              <p>{duration?.toUpperCase()}</p>
+              <div className={styles.duration}>
+                <Image src={ClockIcon} alt='Duration' width={25} height={25} />
+                <p>{duration?.toUpperCase()}</p>
+              </div>
               <p>{cost?.toUpperCase()}</p>
             </div>
-            <div>{attractions}</div>
+            {attractions && (
+              <div className={styles.attractions}>
+                <p>What you&#39;ll see:</p>
+                <ul>
+                  {attractions.map((item, i) => (
+                    <li key={i}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
             <div>{addons}</div>
           </div>
         </section>
