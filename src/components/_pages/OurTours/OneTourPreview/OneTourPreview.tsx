@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 type TourPreview = {
   id: string;
-  title: string;
+  titlePreview: string;
   description: string;
   mainText: string;
   fullWidth?: boolean;
@@ -16,11 +16,11 @@ export default function OneTourPreview({ tour, index }: Props) {
   return (
     <Link href={`/tours/${index}`} className={cx(styles.tourCard, tour.fullWidth && styles.fullWidth)}>
       <div className={styles.imageWrapper}>
-        <Image src={'/images/tours/01.jpg'} alt={tour.title} fill className={styles.image} />
+        <Image src={'/images/tours/01.jpg'} alt={tour.titlePreview} fill className={styles.image} />
       </div>
       <div className={styles.tourInfo}>
         <div>
-          <h3>{tour.title}</h3>
+          <h3>{tour.titlePreview}</h3>
           <p>{tour.description}</p>
         </div>
       </div>

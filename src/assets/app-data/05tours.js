@@ -1,17 +1,35 @@
 export default [
   {
     id: 'geneva',
-    title: 'Geneva\nFood and Culture Tour',
+    duration: '2,5-3 hours',
+    cost: 'from 220 CHF',
+    attractions: [
+      'Fountain Jet D’eau - the symbol of Geneva',
+      'Flower Clock in the English Garden - a colorful demonstration of Geneva as the cradle of watchmaking',
+      'Saint-Pierre Cathedral - the main religious attraction of the city',
+      'Promenade de la Treille with that same bench:), but most importantly - with stunning views on the local mountain Salève and the Park Bastion',
+      'The Reformation Wall - of the same author with the famous statue Christ the Redeemer in Rio',
+      "The streets, that used to be 'red lights district' in Geneva’s history",
+      'Cheese tasting in one of the local artisanal shops',
+      'The best chocolate shops in the city',
+      'And many more!',
+    ],
+    addons: [
+      '10 CHF – cheese tasting',
+      '7 CHF – the entrance to the top of the tower of Saint-Pierre Cathedral (optional)',
+    ],
+    title: 'Geneva. Food and Culture Tour',
+    titlePreview: 'Geneva\nFood and Culture Tour',
     description: 'Old Town walking tour with stops for Swiss cheese and Swiss chocolate tasting!',
     mainText:
-      'Geneva is a cosmopolitan city, a World Financial Center, the birthplace of Swiss watch\n' +
-      'industry, one of the most expensive cities in the world...\n' +
-      'And at the same time, Geneva is a very beautiful and cozy place, that provides you not only the cultural enjoyment, but a delightful local food experience! I invite you for a nice walk around Geneva to see the main attractions of the Old Town mixed with the best foodie places. \n' +
+      'Geneva is a cosmopolitan city, a World Financial Center, the birthplace of Swiss watch industry, one of the most expensive cities in the world...\n\n' +
+      'And at the same time, Geneva is a very beautiful and cozy place, that provides you not only the cultural enjoyment, but a delightful local food experience! I invite you for a nice walk around Geneva to see the main attractions of the Old Town mixed with the best foodie places.\n\n' +
       'By request, we may continue our beautiful day by making a nice walk around the lake towards the French village of Yvoire, which is officially in the list of the most beautiful French villages (1.5 hours one way). ',
   },
   {
     id: 'watches',
     title: 'It’s all about Swiss Watches!',
+    titlePreview: 'It’s all about Swiss Watches!',
     description: 'Geneva and its watch history (and present!)',
     mainText:
       'Geneva, known as the watchmaking capital of the world, has a rich horological history that can be explored through several key locations. On this tour you will learn why specifically Geneva became the cradle of the world watchmaking, the most famous watch brands history, what is the influence of Swiss watches on the world market, and much more. \n' +
@@ -22,6 +40,7 @@ export default [
     fullWidth: true,
     id: 'lausanne',
     title: 'Lausanne, the historical, creative and contrasting city',
+    titlePreview: 'Lausanne, the historical, creative and contrasting city',
     description:
       'The medieval Old Town, Belle Epoque atmosphere, the romantic modern embankment – all these in one day!',
     mainText:
@@ -31,6 +50,7 @@ export default [
   {
     id: 'lavaux',
     title: 'Lavaux Vineyard Terraces',
+    titlePreview: 'Lavaux Vineyard Terraces',
     description:
       'The most instagrammable location on the shores of Lac Leman. Incredibly picturesque walk and local wine tasting',
     mainText:
@@ -45,6 +65,7 @@ export default [
   {
     id: 'montreux',
     title: 'Montreux walking tour and train ride to Roches-de-Naye',
+    titlePreview: 'Montreux walking tour and train ride to Roches-de-Naye',
     description:
       'After visiting the best in Montreux we’ll continue our day by heading up on 2000 metres to admire stunning views over the Lake and the Alps',
     mainText:

@@ -36,6 +36,11 @@ h3 {
   font-weight: map-get($font-weights, medium);
 }
 
+h4 {
+  font-size: map-get($font-sizes, large);
+  font-weight: map-get($font-weights, bold);
+}
+
 
 // Компоненты
 .container {

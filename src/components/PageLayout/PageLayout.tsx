@@ -1,13 +1,11 @@
 import { useTranslations } from 'next-intl';
-type Props = { translation: string; children: React.ReactNode };
+type Props = { title: string; children: React.ReactNode };
 
-export default function PageLayout({ translation, children }: Props) {
-  const t = useTranslations(translation);
-
+export default function PageLayout({ title, children }: Props) {
   return (
     <div className='container'>
       <div>
-        <h2>{t('title')}</h2>
+        <h2>{title}</h2>
       </div>
       <div>{children}</div>
     </div>
