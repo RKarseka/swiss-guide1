@@ -5,7 +5,7 @@
       @content;
     }
   } @else {
-    @warn "Неизвестный брейкпоинт: #{$breakpoint}";
+    @warn "Unknown breakpoint: #{$breakpoint}";
   }
 }
 
@@ -30,7 +30,7 @@
   @if map-has-key($font-sizes, $size) {
     font-size: map-get($font-sizes, $size);
   } @else {
-    @warn "Неизвестный размер шрифта: #{$size}";
+    @warn "Unknown font size: #{$size}";
   }
 }
 
@@ -38,7 +38,7 @@
   @if map-has-key($font-weights, $weight) {
     font-weight: map-get($font-weights, $weight);
   } @else {
-    @warn "Неизвестный вес шрифта: #{$weight}";
+    @warn "Unknown font weight: #{$weight}";
   }
 }
 
@@ -47,7 +47,7 @@
   @if map-has-key($shadows, $level) {
     box-shadow: map-get($shadows, $level);
   } @else {
-    @warn "Неизвестный уровень тени: #{$level}";
+    @warn "Unknown shadow level: #{$level}";
   }
 }
 

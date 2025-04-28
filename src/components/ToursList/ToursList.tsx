@@ -24,7 +24,7 @@ const defaultTours: Tour[] = [
     title: 'Geneva',
     subtitle: 'The discreet luxury',
     description: 'Old Town walking tour with stops for Swiss cheese and Swiss chocolates tasting!',
-    image: '/images/tours/geneva.jpg',
+    image: '/images/tours/01.jpg',
   },
   {
     id: 'montreux',
@@ -32,7 +32,7 @@ const defaultTours: Tour[] = [
     subtitle: 'train ride to Roches-de-Naye',
     description:
       "After visiting the best in Montreux we'll continue our day by heading up on 2000 metres to get stunning views over the Lake and the Alps",
-    image: '/images/tours/montreux.jpg',
+    image: '/images/tours/01.jpg',
   },
   {
     id: 'lavaux',
@@ -40,7 +40,7 @@ const defaultTours: Tour[] = [
     subtitle: 'Vineyard Terraces',
     description:
       'The most Instagrammable location on the shores of Lac Léman! Its really picturesque walk and local wine tasting',
-    image: '/images/tours/lavaux.jpg',
+    image: '/images/tours/01.jpg',
     fullWidth: true,
   },
   {
@@ -48,14 +48,14 @@ const defaultTours: Tour[] = [
     title: "It's all about",
     subtitle: 'Swiss Watches!',
     description: 'Geneva visit to watch history (and present!)',
-    image: '/images/tours/watches.jpg',
+    image: '/images/tours/01.jpg',
   },
   {
     id: 'lausanne',
     title: 'Lausanne',
     subtitle: 'The historical, creative and contrasting city',
     description: 'The medieval Old Town, Belle Époque atmosphere, the romantic modern embankment - all in one day',
-    image: '/images/tours/lausanne.jpg',
+    image: '/images/tours/01.jpg',
   },
 ];
 

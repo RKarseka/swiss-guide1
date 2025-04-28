@@ -15,24 +15,37 @@ body {
   background-color: map-get($colors, light);
   color: map-get($colors, black);
   line-height: 1.5;
+  white-space: pre-line;
+
   @include font-size(base);
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   line-height: 1.2;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 h2 {
-  font-size: map-get($font-sizes, medium1);
+  font-size: map-get($font-sizes, xlarge);
+  font-weight: map-get($font-weights, bold);
 }
+
+h3 {
+  font-size: map-get($font-sizes, large);
+  font-weight: map-get($font-weights, medium);
+}
+
 
 // Компоненты
 .container {
   max-width: map-get($breakpoints, large);
   margin: 0 auto;
-  padding: 0 map-get($spacing-sizes, 3);
+  padding: 30px map-get($spacing-sizes, 3);
+}
+
+.sectionContainer {
+
 }
 
 // Утилиты

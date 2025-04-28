@@ -11,15 +11,6 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
 
-  // const navItems = [
-  //   { href: '/', label: 'Главная' },
-  //   { href: '/tours', label: 'Туры' },
-  //   { href: '/about', label: 'О нас' },
-  //   { href: '/reviews', label: 'Отзывы' },
-  //   { href: '/blogs', label: 'Блог' },
-  //   { href: '/contact', label: 'Контакты' },
-  // ];
-
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };

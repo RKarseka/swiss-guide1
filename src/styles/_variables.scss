@@ -8,7 +8,11 @@ $colors: (
         info: #17a2b8,
         light: #f8f9fa,
         dark: #343a40,
-        black:#000
+  //official
+        black: #000,
+        black40: rgba(0, 0, 0, 0.4),
+        black60: rgba(0, 0, 0, 0.6),
+        white: #fff
 );
 
 // Переменные
@@ -42,8 +46,8 @@ $font-sizes: (
         small: 0.875rem,
         base: 1rem,
         medium: 1.25rem,
-        large: 1.5rem,
-        xlarge: 2rem
+        large: 2rem,
+        xlarge: 3rem
 );
 
 $font-weights: (

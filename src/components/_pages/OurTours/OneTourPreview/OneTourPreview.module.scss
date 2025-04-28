@@ -1,0 +1,61 @@
+@import '@/styles/variables';
+
+.tourCard {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  text-decoration: none;
+  height: 575px;
+  grid-column: span 2;
+
+
+  &.fullWidth {
+    grid-column: 1 / -1;
+    height: 420px;
+  }
+
+  &:hover {
+    .image {
+      transform: scale(1.1);
+    }
+  }
+
+  &:last-child, &:first-child {
+    grid-column: span 3;
+
+
+  }
+}
+
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.image {
+  object-fit: cover;
+  transition: transform 2s ease;
+}
+
+.tourInfo {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: map-get($colors, white);
+  transition: background 0.3s ease;
+
+  &:before {
+    display: block;
+    content: '';
+    height: 50px;
+    background: linear-gradient(0deg, map-get($colors, black40) 0%, transparent 100%);
+  }
+
+  & > div {
+    padding: 1.5rem;
+    background-color: map-get($colors, black40);
+  }
+}
