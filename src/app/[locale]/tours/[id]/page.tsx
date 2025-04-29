@@ -1,10 +1,12 @@
 import Image from 'next/image';
+import ReactMarkdown from 'react-markdown';
 import Link from 'next/link';
 import styles from './page.module.scss';
 import TourActions from '@/components/TourActions/TourActions';
 import tours from '@/assets/app-data/05tours';
 import PageLayout from '@/components/PageLayout/PageLayout';
 import ClockIcon from '@/assets/img/icons/clock.svg';
+import BookNow from '@/components/BookNow/BookNow';
 
 interface Props {
   params: { id: string; locale: string };
@@ -12,7 +14,7 @@ interface Props {
 
 export default async function TourPage({ params }: Props) {
   const tour = tours[+params.id];
-  const { title, description, mainText, duration, cost, attractions, addons } = tour;
+  const { title, description, mainText, duration, cost, attractions, addons, prices } = tour;
 
   return (
     <>
@@ -26,21 +28,52 @@ export default async function TourPage({ params }: Props) {
             <div className={styles.cost}>
               <div className={styles.duration}>
                 <Image src={ClockIcon} alt='Duration' width={25} height={25} />
-                <p>{duration?.toUpperCase()}</p>
+                <h5>{duration?.toUpperCase()}</h5>
               </div>
-              <p>{cost?.toUpperCase()}</p>
+              <h5>{cost?.toUpperCase()}</h5>
             </div>
-            {attractions && (
-              <div className={styles.attractions}>
-                <p>What you&#39;ll see:</p>
-                <ul>
-                  {attractions.map((item, i) => (
-                    <li key={i}>{item}</li>
-                  ))}
-                </ul>
+            <div className={styles.rightMiddle}>
+              {attractions && (
+                <div className={styles.attractions}>
+                  <p>What you&#39;ll see:</p>
+                  <ul>
+                    {attractions.map((item, i) => (
+                      <li key={i}>
+                        <ReactMarkdown>{item}</ReactMarkdown>{' '}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              {addons && (
+                <div>
+                  <p>
+                    <strong>Additional expenses:</strong>
+                  </p>
+                  <ul>
+                    {addons.map((item, i) => (
+                      <li key={i}>
+                        <ReactMarkdown>{item}</ReactMarkdown>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+            <div>
+              <div>
+                {prices?.map((price, i) => (
+                  <div key={i} className={styles.prices}>
+                    <h5>{price.title?.toUpperCase()}</h5>
+                    <h5>{price.cost?.toUpperCase()}</h5>
+                  </div>
+                ))}
               </div>
-            )}
-            <div>{addons}</div>
+              <div>
+                <BookNow />
+                <button>CONTACT</button>
+              </div>
+            </div>
           </div>
         </section>
       </PageLayout>
@@ -89,7 +122,7 @@ export default async function TourPage({ params }: Props) {
             <ul className={styles.list}>
               <li className={styles.listItem}>
                 <span className={styles.bullet}>•</span>
-                Fountain Jet D'eau - the symbol of Geneva
+                Fountain Jet D&#39;eau - the symbol of Geneva
               </li>
               <li className={styles.listItem}>
                 <span className={styles.bullet}>•</span>

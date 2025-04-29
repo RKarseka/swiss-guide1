@@ -1,0 +1,14 @@
+@import '@/styles/variables';
+@import '@/styles/mixins';
+
+.button {
+  min-width: 150px;
+  background-color: map-get($colors, red);
+  color: map-get($colors, white);
+  padding: 0.8rem 2rem;
+  border-radius: 0.625rem;
+  &:hover {
+    background-color: map-get($colors, red-hover);
+
+  }
+}

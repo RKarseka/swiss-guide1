@@ -3,6 +3,10 @@ export default [
     id: 'geneva',
     duration: '2,5-3 hours',
     cost: 'from 220 CHF',
+    prices: [
+      { title: '1-4 persons', cost: '190 CHF' },
+      { title: 'for each additional person', cost: '40 CHF' },
+    ],
     attractions: [
       '**Fountain Jet D’eau** - the symbol of Geneva',
       '**Flower Clock** in the English Garden - a colorful demonstration of Geneva as the cradle of watchmaking',

@@ -19,8 +19,8 @@
   grid-auto-flow: column;
   justify-content: space-between;
   color: map-get($colors, red);
-  font-weight: map-get($font-weights, sbold);
-  font-size: map-get($font-sizes, medium);
+  //font-weight: map-get($font-weights, sbold);
+  //font-size: map-get($font-sizes, medium);
   margin-bottom: 45px;
 }
 
@@ -38,7 +38,14 @@
   }
 }
 
+.rightMiddle{
+  margin-bottom: 75px;
+}
+
 .attractions {
+  margin-bottom: 20px;
+  line-height: 150%;
+
   li {
     position: relative;
     padding-left: 20px;
@@ -47,7 +54,7 @@
       content: '';
       position: absolute;
       left: 0;
-      top: 50%;
+      top: 0.7rem;
       transform: translateY(-50%);
       width: 6px;
       height: 6px;
@@ -56,7 +63,6 @@
     }
   }
 }
-
 
 
 .container {
