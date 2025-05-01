@@ -1,7 +1,9 @@
 {
+  "buttons": {
+  },
   "layout": {
     "title": "Swiss Guide - Switzerland Travel Guide",
-    "description":"Tours and excursions in Switzerland"
+    "description": "Tours and excursions in Switzerland"
   },
   "header": {
     "navbar": {
@@ -42,6 +44,5 @@
     "title": "Our tours"
   },
   "OneTourPage": {
-
   }
 } 

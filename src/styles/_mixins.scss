@@ -85,12 +85,75 @@
 
 @mixin responsive($breakpoint) {
   @if $breakpoint == mobile {
-    @media (max-width: 576px) { @content; }
+    @media (max-width: 576px) {
+      @content;
+    }
   }
   @if $breakpoint == tablet {
-    @media (max-width: 768px) { @content; }
+    @media (max-width: 768px) {
+      @content;
+    }
   }
   @if $breakpoint == desktop {
-    @media (max-width: 992px) { @content; }
+    @media (max-width: 992px) {
+      @content;
+    }
   }
 }
+
+// Миксины для сеток
+@mixin grid($columns: 1, $gap: 1rem) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  gap: $gap;
+}
+
+@mixin grid-responsive($mobile: 1, $tablet: 2, $desktop: 3, $gap: 1rem) {
+  display: grid;
+  gap: $gap;
+
+  @include respond-to(mobile) {
+    grid-template-columns: repeat($mobile, 1fr);
+  }
+
+  @include respond-to(tablet) {
+    grid-template-columns: repeat($tablet, 1fr);
+  }
+
+  @include respond-to(desktop) {
+    grid-template-columns: repeat($desktop, 1fr);
+  }
+}
+
+@mixin grid-auto-fit($min-size: 250px, $gap: 1rem) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($min-size, 1fr));
+  gap: $gap;
+}
+
+@mixin grid-auto-fill($min-size: 250px, $gap: 1rem) {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($min-size, 1fr));
+  gap: $gap;
+}
+
+@mixin grid-area($rows: 1, $columns: 1) {
+  grid-row: span $rows;
+  grid-column: span $columns;
+}
+
+@mixin grid-gap($row-gap: 1rem, $column-gap: 1rem) {
+  row-gap: $row-gap;
+  column-gap: $column-gap;
+}
+
+@mixin grid-columns($jc:space-between) {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: $jc;
+}
+
+.grid-columns {
+  @include grid-columns();
+}
+

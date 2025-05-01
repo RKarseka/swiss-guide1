@@ -5,23 +5,18 @@
 .section {
   display: grid;
   grid-template-columns: 0.65fr 0.35fr;
-  gap: 4.5rem;
-}
-
-.leftSide {
-  & > h4 {
-    margin-bottom: 35px;
-  }
+  gap: 1.375rem 4rem;
 }
 
 .cost {
-  display: grid;
-  grid-auto-flow: column;
-  justify-content: space-between;
+  @include grid-columns();
+
+  align-self: center;
   color: map-get($colors, red);
-  //font-weight: map-get($font-weights, sbold);
-  //font-size: map-get($font-sizes, medium);
-  margin-bottom: 45px;
+
+  h5 {
+    margin: 0;
+  }
 }
 
 .duration {
@@ -38,12 +33,25 @@
   }
 }
 
-.rightMiddle{
-  margin-bottom: 75px;
+.mainText {
+  display: grid;
+  align-content: space-between;
+  gap: 2rem;
+}
+
+.rightSide {
+  display: grid;
+  align-content: space-between;
+  gap: 2rem;
+}
+
+.rightMiddle {
+  display: grid;
+  gap: 2rem;
+
 }
 
 .attractions {
-  margin-bottom: 20px;
   line-height: 150%;
 
   li {
@@ -63,7 +71,6 @@
     }
   }
 }
-
 
 .container {
   max-width: map-get($breakpoints, large);
@@ -148,11 +155,19 @@
   margin-top: auto;
 }
 
+.prices {
+  display: grid;
+  gap: 1.25rem;
 
-.price {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: map-get($colors, primary);
+  h5 {
+    margin: 0;
+  }
+}
+
+.notification {
+  width: 100%;
+  display: inline-block;
+  text-align: right;
 }
 
 .content {
@@ -161,134 +176,11 @@
   gap: 3rem;
 }
 
-.section {
-  h2 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: map-get($colors, dark);
-    margin-bottom: 1.5rem;
-  }
+.buttons-container > * {
+  width: 11rem;
 }
 
-.mainText {
-  font-size: 1.125rem;
-  line-height: 1.6;
-  color: map-get($colors, secondary);
-
-  p {
-    margin-bottom: 1rem;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-
-  @include respond-to(tablet) {
-    grid-template-columns: 1fr;
-  }
-}
-
-.list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.allTours {
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  justify-content: center;
 }
-
-.listItem {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.5rem;
-  color: map-get($colors, secondary);
-  font-size: 1rem;
-  line-height: 1.5;
-}
-
-.bullet {
-  color: map-get($colors, primary);
-  font-size: 1.2rem;
-  line-height: 1;
-}
-
-.pricing {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  padding: 2rem;
-  background-color: map-get($colors, light);
-  border-radius: 8px;
-}
-
-.priceItem {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 0;
-  border-bottom: 1px solid map-get($colors, border);
-
-  &:last-child {
-    border-bottom: none;
-  }
-}
-
-.priceLabel {
-  font-size: 1rem;
-  color: map-get($colors, secondary);
-}
-
-.priceValue {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: map-get($colors, primary);
-}
-
-.actions {
-  display: flex;
-  justify-content: space-between;
-  gap: 2rem;
-  margin-top: 2rem;
-
-  @include respond-to(mobile) {
-    flex-direction: column;
-  }
-}
-
-.backButton {
-  padding: 0.75rem 1.5rem;
-  background-color: transparent;
-  color: map-get($colors, dark);
-  border: 1px solid map-get($colors, border);
-  border-radius: 4px;
-  font-weight: 500;
-  text-decoration: none;
-  text-align: center;
-  transition: all 0.3s ease;
-
-  &:hover {
-    background-color: map-get($colors, light);
-  }
-}
-
-.bookButton {
-  padding: 0.75rem 1.5rem;
-  background-color: map-get($colors, primary);
-  color: white;
-  border: none;
-  border-radius: 4px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-
-  &:hover {
-    background-color: darken(map-get($colors, primary), 10%);
-  }
-}
-

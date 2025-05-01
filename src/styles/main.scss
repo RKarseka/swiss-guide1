@@ -46,7 +46,12 @@ h5 {
   font-weight: map-get($font-weights, sbold);
 }
 
-strong{
+span{
+  font-size: map-get($font-sizes, small);
+  font-weight: map-get($font-weights, regular);
+}
+
+strong {
   font-weight: map-get($font-weights, bold);
 }
 
@@ -61,6 +66,39 @@ strong{
 .sectionContainer {
 
 }
+
+
+.button {
+  background-color: map-get($colors, red);
+  color: map-get($colors, white);
+
+  &:hover {
+    background-color: map-get($colors, red-hover);
+
+  }
+}
+
+.button, .button-link {
+  padding: 0.5rem 1rem;
+  border-radius: 0.625rem;
+  font-size: 1.25rem;
+  font-weight: map-get($font-weights, sbold);
+  text-transform: uppercase;
+}
+
+.button-link {
+  display: inline-block;
+  text-align: center;
+  color: map-get($colors, red);
+  border: 2px solid map-get($colors, red);
+
+  &:hover {
+    background-color: map-get($colors, red-hover);
+    border-color: map-get($colors, red-hover);
+    color: map-get($colors, white);
+  }
+}
+
 
 // Утилиты
 .text-center {
