@@ -1,3 +1,7 @@
+'use client';
+
+import React, { useState } from 'react';
+import { useParams } from 'next/navigation';
 import cx from 'clsx';
 import Image from 'next/image';
 import ReactMarkdown from 'react-markdown';
@@ -7,15 +11,12 @@ import tours from '@/assets/app-data/05tours';
 import PageLayout from '@/components/PageLayout/PageLayout';
 import ClockIcon from '@/assets/img/icons/clock.svg';
 import BookNow from '@/components/BookNow/BookNow';
-import React, { useState } from 'react';
 
-interface Props {
-  params: { id: string; locale: string };
-}
-
-export default async function TourPage({ params }: Props) {
-  const { id } = await params;
-  const tour = tours[+id];
+export default function TourPage() {
+  const params = useParams();
+  const [mainSlide, setMainSlide] = useState(0);
+  if (!params?.id) return null;
+  const tour = tours[+params.id];
   const {
     title,
     description,
@@ -27,8 +28,6 @@ export default async function TourPage({ params }: Props) {
     addons,
     prices,
   } = tour;
-
-  const [mainSlide, setMainSlide] = useState(0);
 
   return (
     <PageLayout title={title}>
@@ -45,14 +44,13 @@ export default async function TourPage({ params }: Props) {
           <div>
             <ReactMarkdown>{mainText}</ReactMarkdown>
           </div>
-          <Image
-            src={`/images/tours/tour${id}/01.jpg`}
-            alt={tour.title}
-            // fill
-            // className={styles.image}
-            width={680}
-            height={450}
-          />
+          <div className={styles.mainSlide}>
+            <Image
+              src={`/images/tours/tour${params.id}/01.jpg`}
+              alt={tour.title}
+              fill
+            />
+          </div>
         </div>
 
         <div className={styles.rightSide}>
@@ -100,6 +98,7 @@ export default async function TourPage({ params }: Props) {
           </div>
         </div>
       </section>
+      <section></section>
       <section className={styles.allTours}>
         <Link href={`/tours`} className={'button-link'}>
           show All tours
