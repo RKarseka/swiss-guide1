@@ -14,9 +14,17 @@ type TourPreview = {
 type Props = { tour: TourPreview; index: number };
 export default function OneTourPreview({ tour, index }: Props) {
   return (
-    <Link href={`/tours/${index}`} className={cx(styles.tourCard, tour.fullWidth && styles.fullWidth)}>
+    <Link
+      href={`/tours/${index}`}
+      className={cx(styles.tourCard, tour.fullWidth && styles.fullWidth)}
+    >
       <div className={styles.imageWrapper}>
-        <Image src={'/images/tours/01.jpg'} alt={tour.titlePreview} fill className={styles.image} />
+        <Image
+          src={`/images/tours/tour${index}/01.jpg`}
+          alt={tour.titlePreview}
+          fill
+          className={styles.image}
+        />
       </div>
       <div className={styles.tourInfo}>
         <div>

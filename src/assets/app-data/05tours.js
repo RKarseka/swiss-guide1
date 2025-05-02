@@ -5,7 +5,10 @@ export default [
     cost: 'from 220 CHF',
     prices: [
       { title: '1-4 persons', cost: '190 CHF' },
-      { title: 'for each additional person', cost: '40 CHF' },
+      {
+        title: 'for each additional person',
+        cost: '40 CHF',
+      },
     ],
     attractions: [
       '**Fountain Jet D’eau** - the symbol of Geneva',
@@ -19,10 +22,12 @@ export default [
       'And many more!',
     ],
     addons:
-      '10 CHF – cheese tasting\n' + '7 CHF – the entrance to the top of the tower of Saint-Pierre Cathedral (optional)',
+      '10 CHF – cheese tasting\n' +
+      '7 CHF – the entrance to the top of the tower of Saint-Pierre Cathedral (optional)',
     title: 'Geneva. Food and Culture Tour',
     titlePreview: 'Geneva\nFood and Culture Tour',
-    description: 'Old Town walking tour with stops for Swiss cheese and Swiss chocolate tasting!',
+    description:
+      'Old Town walking tour with stops for Swiss cheese and Swiss chocolate tasting!',
     mainText:
       'Geneva is a cosmopolitan city, a World Financial Center, the birthplace of Swiss watch industry, one of the most expensive cities in the world...\n\n' +
       'And at the same time, Geneva is a very beautiful and cozy place, that provides you not only the cultural enjoyment, but a delightful local food experience! I invite you for a nice walk around Geneva to see the main attractions of the Old Town mixed with the best foodie places.\n\n' +
@@ -34,7 +39,10 @@ export default [
     cost: 'from 190 CHF',
     prices: [
       { title: '1-4 persons', cost: '190 CHF' },
-      { title: 'for each additional person', cost: '40 CHF' },
+      {
+        title: 'for each additional person',
+        cost: '40 CHF',
+      },
     ],
     attractions: [
       '**Fountain Jet D’eau** - the symbol of Geneva',
@@ -62,7 +70,10 @@ export default [
     cost: 'from 240 CHF',
     prices: [
       { title: '1-4 persons', cost: '240 CHF' },
-      { title: 'for each additional person', cost: '40 CHF' },
+      {
+        title: 'for each additional person',
+        cost: '40 CHF',
+      },
     ],
     attractions: [
       '**Walk through the Old Town** with its ancient buildings and you will get to know interesting facts about celebrities living here, Coco Chanel and David Bowie being among them!',
@@ -72,7 +83,8 @@ export default [
       'Local **cheese tasting** might be organized **by request** (which takes around 20 minutes).',
       'After the Old Town walk we will head to **Lausanne Ouchy** to let you get enchanted with the beauty of Lausanne lakeside promenade.',
     ],
-    addons: '5 CHF – the entrance to the top of the tower of the Cathedral (optional)',
+    addons:
+      '5 CHF – the entrance to the top of the tower of the Cathedral (optional)',
     title: 'Lausanne, the historical, creative and contrasting city',
     titlePreview: 'Lausanne, the historical, creative and contrasting city',
     description:
@@ -86,9 +98,20 @@ export default [
     duration: '3,5-4 hours',
     cost: 'the price depends on meeting point',
     prices: [
-      { title: '1-4 persons', cost: '280 CHF', notification: 'if we meet in Lausanne' },
-      { title: '1-4 persons', cost: '360 CHF', notification: 'if we meet in Lausanne' },
-      { title: 'for each additional person', cost: '40 CHF' },
+      {
+        title: '1-4 persons',
+        cost: '280 CHF',
+        notification: 'if we meet in Lausanne',
+      },
+      {
+        title: '1-4 persons',
+        cost: '360 CHF',
+        notification: 'if we meet in Lausanne',
+      },
+      {
+        title: 'for each additional person',
+        cost: '40 CHF',
+      },
     ],
     title: 'Lavaux Vineyard Terraces',
     titlePreview: 'Lavaux Vineyard Terraces',

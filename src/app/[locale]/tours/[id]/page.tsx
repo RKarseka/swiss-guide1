@@ -7,7 +7,7 @@ import tours from '@/assets/app-data/05tours';
 import PageLayout from '@/components/PageLayout/PageLayout';
 import ClockIcon from '@/assets/img/icons/clock.svg';
 import BookNow from '@/components/BookNow/BookNow';
-import React from 'react';
+import React, { useState } from 'react';
 
 interface Props {
   params: { id: string; locale: string };
@@ -16,7 +16,19 @@ interface Props {
 export default async function TourPage({ params }: Props) {
   const { id } = await params;
   const tour = tours[+id];
-  const { title, description, mainText, duration, cost, attractions, shortDescription, addons, prices } = tour;
+  const {
+    title,
+    description,
+    mainText,
+    duration,
+    cost,
+    attractions,
+    shortDescription,
+    addons,
+    prices,
+  } = tour;
+
+  const [mainSlide, setMainSlide] = useState(0);
 
   return (
     <PageLayout title={title}>
@@ -33,7 +45,14 @@ export default async function TourPage({ params }: Props) {
           <div>
             <ReactMarkdown>{mainText}</ReactMarkdown>
           </div>
-          <Image src={ClockIcon} alt='Duration' width={25} height={25} />
+          <Image
+            src={`/images/tours/tour${id}/01.jpg`}
+            alt={tour.title}
+            // fill
+            // className={styles.image}
+            width={680}
+            height={450}
+          />
         </div>
 
         <div className={styles.rightSide}>
@@ -66,7 +85,9 @@ export default async function TourPage({ params }: Props) {
                     <h5>{price.title?.toUpperCase()}</h5>
                     <h5>{price.cost?.toUpperCase()}</h5>
                   </div>
-                  {'notification' in price && <span className={styles.notification}>{price.notification}</span>}
+                  {'notification' in price && (
+                    <span className={styles.notification}>{price.notification}</span>
+                  )}
                 </div>
               ))}
             </div>

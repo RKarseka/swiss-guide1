@@ -59,7 +59,9 @@ export default [
       componentWrapperFunctions: ['observer', 'styled'],
     },
     languageOptions: {
-      parserOptions: { ecmaFeatures: { jsx: true } },
+      parserOptions: {
+        ecmaFeatures: { jsx: true },
+      },
       globals: globals.browser,
     },
   },
@@ -72,9 +74,8 @@ export default [
           arrowParens: 'always',
           singleQuote: true,
           trailingComma: 'es5',
-          printWidth: 120,
+          printWidth: 85,
           endOfLine: 'auto',
-
           jsxSingleQuote: true,
           bracketSameLine: false,
         },

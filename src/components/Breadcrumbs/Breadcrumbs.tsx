@@ -1,6 +1,5 @@
 'use client';
 import Link from 'next/link';
-import cx from 'clsx';
 import styles from './Breadcrumbs.module.scss';
 import { usePathname } from 'next/navigation';
 
@@ -13,9 +12,10 @@ export default function Breadcrumbs({ title }: BreadcrumbsProps) {
   const breadcrumbs = pathname.split('/');
   const breadcrumbsArr = [
     { href: '/', label: 'Main page' },
-    ...breadcrumbs
-      .slice(2, -1)
-      .map((item) => ({ href: '/' + item, label: item.charAt(0).toUpperCase() + item.slice(1) })),
+    ...breadcrumbs.slice(2, -1).map((item) => ({
+      href: '/' + item,
+      label: item.charAt(0).toUpperCase() + item.slice(1),
+    })),
     { href: '/current', label: title },
   ];
   return (
@@ -26,7 +26,7 @@ export default function Breadcrumbs({ title }: BreadcrumbsProps) {
             {item.href && index < breadcrumbsArr.length - 1 ? (
               <>
                 <Link href={item.href}>{item.label}</Link>
-                <span className={styles.separator}>/</span>
+                <span className={styles.separator}>→</span>
               </>
             ) : (
               <span className={styles.current}>{item.label}</span>
