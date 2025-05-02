@@ -19,8 +19,7 @@ export default [
       'And many more!',
     ],
     addons:
-      '10 CHF – cheese tasting\n\n' +
-      '7 CHF – the entrance to the top of the tower of Saint-Pierre Cathedral (optional)',
+      '10 CHF – cheese tasting\n' + '7 CHF – the entrance to the top of the tower of Saint-Pierre Cathedral (optional)',
     title: 'Geneva. Food and Culture Tour',
     titlePreview: 'Geneva\nFood and Culture Tour',
     description: 'Old Town walking tour with stops for Swiss cheese and Swiss chocolate tasting!',

@@ -3,18 +3,19 @@ import Image from 'next/image';
 import ReactMarkdown from 'react-markdown';
 import Link from 'next/link';
 import styles from './page.module.scss';
-import TourActions from '@/components/TourActions/TourActions';
 import tours from '@/assets/app-data/05tours';
 import PageLayout from '@/components/PageLayout/PageLayout';
 import ClockIcon from '@/assets/img/icons/clock.svg';
 import BookNow from '@/components/BookNow/BookNow';
+import React from 'react';
 
 interface Props {
   params: { id: string; locale: string };
 }
 
 export default async function TourPage({ params }: Props) {
-  const tour = tours[+params.id];
+  const { id } = await params;
+  const tour = tours[+id];
   const { title, description, mainText, duration, cost, attractions, shortDescription, addons, prices } = tour;
 
   return (
@@ -43,7 +44,7 @@ export default async function TourPage({ params }: Props) {
                 <ul>
                   {attractions.map((item, i) => (
                     <li key={i}>
-                      <ReactMarkdown>{item}</ReactMarkdown>{' '}
+                      <ReactMarkdown>{item}</ReactMarkdown>
                     </li>
                   ))}
                 </ul>
@@ -51,10 +52,10 @@ export default async function TourPage({ params }: Props) {
             )}
             {shortDescription && <ReactMarkdown>{shortDescription}</ReactMarkdown>}
             {addons && (
-              <p>
+              <div>
                 <strong>Additional expenses:</strong>
                 <ReactMarkdown>{addons}</ReactMarkdown>
-              </p>
+              </div>
             )}
           </div>
           <div>
