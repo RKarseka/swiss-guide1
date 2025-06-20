@@ -1,9 +1,23 @@
+@import '../../styles/_mixins';
+@import '../../styles/_variables';
+
 .section {
-  padding-top: 192px;
-  background-image: url('../../assets/img/main/baner.jpg');
+  padding-top: 50px;
+  background-image: url('../../assets/img/main/banner.jpg');
 
   background-size: cover;
   background-position: center;
-  height: 700px;
-  width: 100%;
+
+  color: map-get($colors, white);
+
+  h1 {
+    font-size: 152px;
+    font-family: Philosopher;
+  }
+
+  h2 {
+    display: inline-block;
+    font-family: Mulish;
+    width: 824px;
+  }
 }

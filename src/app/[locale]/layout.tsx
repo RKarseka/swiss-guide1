@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Noto_Sans } from 'next/font/google';
+import { Noto_Sans, Philosopher, Mulish } from 'next/font/google';
 import '@/styles/main.scss';
 import Navbar from '@/components/Navbar/Navbar';
 import Footer from '@/components/Footer/Footer';
@@ -16,7 +16,23 @@ const notoSans = Noto_Sans({
   display: 'swap',
 });
 
-export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
+const philosopher = Philosopher({
+  weight: ['700'],
+  subsets: ['latin', 'cyrillic'],
+  display: 'swap',
+});
+
+const mulish = Mulish({
+  weight: ['600'],
+  subsets: ['latin', 'cyrillic'],
+  display: 'swap',
+});
+
+export async function generateMetadata({
+  params: { locale },
+}: {
+  params: { locale: string };
+}): Promise<Metadata> {
   return getMetadata(locale);
 }
 
