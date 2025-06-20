@@ -19,10 +19,14 @@ const Navbar = () => {
     <nav className={styles.navbar}>
       <div className={styles.container}>
         <Link href='/' className={styles.logo}>
-          Swiss Guide
+          LOGO?
         </Link>
 
-        <button className={styles.menuButton} onClick={toggleMenu} aria-label='Toggle menu'>
+        <button
+          className={styles.menuButton}
+          onClick={toggleMenu}
+          aria-label='Toggle menu'
+        >
           <svg
             className={`${styles.menuIcon} ${isMenuOpen ? styles.active : ''}`}
             width='24'

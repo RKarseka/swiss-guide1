@@ -21,7 +21,7 @@
 .logo {
   font-size: map-get($font-sizes, large);
   font-weight: map-get($font-weights, bold);
-  color: map-get($colors, primary);
+  //color: map-get($colors, primary);
   text-decoration: none;
 }
 
@@ -39,7 +39,6 @@
     padding: map-get($spacing-sizes, 3);
     flex-direction: column;
     align-items: center;
-    box-shadow: map-get($shadows, medium);
     transform: translateY(-100%);
     opacity: 0;
     transition: transform 0.3s ease, opacity 0.3s ease;
