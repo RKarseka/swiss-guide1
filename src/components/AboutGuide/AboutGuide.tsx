@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import styles from './AboutGuide.module.scss';
 
 export default function AboutGuide() {
