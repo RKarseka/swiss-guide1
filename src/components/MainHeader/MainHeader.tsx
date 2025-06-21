@@ -1,4 +1,4 @@
-import classes from './classes.module.scss';
+import classes from './MainHeader.module.scss';
 
 export default function MainHeader() {
   return (

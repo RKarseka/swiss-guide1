@@ -1,98 +1,32 @@
 @import '@/styles/variables';
 @import '@/styles/mixins';
 
-.container {
-  padding: 4rem map-get($spacing-sizes, 4);
-  background-color: map-get($colors, light);
-
-  @include respond-to(tablet) {
-    padding: 3rem map-get($spacing-sizes, 3);
-  }
-}
-
 .content {
-  max-width: map-get($breakpoints, large);
-  margin: 0 auto;
   display: flex;
-  gap: 4rem;
-
-  @include respond-to(tablet) {
-    flex-direction: column;
-    gap: 2rem;
-  }
+  gap: 121px;
 }
 
-.imageWrapper {
-  flex: 0 0 500px;
-  position: relative;
-
-  @include respond-to(tablet) {
-    flex: 0 0 auto;
-    width: 100%;
-    max-width: 500px;
-    margin: 0 auto;
-  }
-}
-
-.image {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  object-fit: cover;
+.photo {
+  width: 479px;
+  height: 410px;
+  background-image: url('../../assets/img/main/photo1.jpg');
+  border-radius: 10px;
 }
 
 .info {
   flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.introduction {
-  h2 {
-    font-size: 2.5rem;
-    font-weight: 600;
-    color: map-get($colors, dark);
-    margin-bottom: 1rem;
-  }
 
   h3 {
-    font-size: 1.5rem;
-    font-weight: 500;
-    color: map-get($colors, primary);
-    margin-bottom: 1.5rem;
+    margin-bottom: 25px;
   }
 }
 
 .mission {
-  p {
-    font-size: 1.125rem;
-    line-height: 1.6;
-    color: map-get($colors, dark);
-    margin-bottom: 1rem;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
+  margin-left: 100px;
+  padding-left: 20px;
+  border-left: solid 1px map-get($colors, black);
+  width: 393px;
+  h5{
+    margin-bottom: 15px;
   }
 }
-
-.whyMe {
-  h3 {
-    font-size: 1.75rem;
-    font-weight: 600;
-    color: map-get($colors, dark);
-    margin-bottom: 1.5rem;
-  }
-
-  p {
-    font-size: 1.125rem;
-    line-height: 1.6;
-    color: map-get($colors, dark);
-    margin-bottom: 1rem;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-} 

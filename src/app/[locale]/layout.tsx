@@ -10,11 +10,11 @@ import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { getMetadata } from '@/i18n/metadata';
 
-const notoSans = Noto_Sans({
-  weight: ['300', '400', '500', '700'],
-  subsets: ['latin', 'cyrillic'],
-  display: 'swap',
-});
+// const notoSans = Noto_Sans({
+//   weight: ['300', '400', '500', '700'],
+//   subsets: ['latin', 'cyrillic'],
+//   display: 'swap',
+// });
 
 const philosopher = Philosopher({
   weight: ['700'],
@@ -22,7 +22,7 @@ const philosopher = Philosopher({
   display: 'swap',
 });
 
-const mulish = Mulish({
+const mainFont = Mulish({
   weight: ['600'],
   subsets: ['latin', 'cyrillic'],
   display: 'swap',
@@ -49,7 +49,7 @@ export default function LocaleLayout({
 
   return (
     <html lang={locale}>
-      <body className={notoSans.className}>
+      <body className={mainFont.className}>
         <NextIntlClientProvider locale={locale}>
           <div className={styles.wrapper}>
             <Navbar />

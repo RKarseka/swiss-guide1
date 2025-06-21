@@ -23,7 +23,8 @@ const defaultTours: Tour[] = [
     id: 'geneva',
     title: 'Geneva',
     subtitle: 'The discreet luxury',
-    description: 'Old Town walking tour with stops for Swiss cheese and Swiss chocolates tasting!',
+    description:
+      'Old Town walking tour with stops for Swiss cheese and Swiss chocolates tasting!',
     image: '/images/tours/01.jpg',
   },
   {
@@ -54,7 +55,8 @@ const defaultTours: Tour[] = [
     id: 'lausanne',
     title: 'Lausanne',
     subtitle: 'The historical, creative and contrasting city',
-    description: 'The medieval Old Town, Belle Époque atmosphere, the romantic modern embankment - all in one day',
+    description:
+      'The medieval Old Town, Belle Époque atmosphere, the romantic modern embankment - all in one day',
     image: '/images/tours/01.jpg',
   },
 ];
@@ -84,7 +86,12 @@ export default function ToursList({ initialTours = defaultTours }: ToursListProp
               className={`${styles.tourCard} ${tour.fullWidth ? styles.fullWidth : ''}`}
             >
               <div className={styles.imageWrapper}>
-                <Image src={tour.image} alt={tour.title} fill className={styles.image} />
+                <Image
+                  src={tour.image}
+                  alt={tour.title}
+                  fill
+                  className={styles.image}
+                />
               </div>
               <div className={styles.tourInfo}>
                 <h3>{tour.title}</h3>
@@ -97,7 +104,9 @@ export default function ToursList({ initialTours = defaultTours }: ToursListProp
 
         <div className={styles.customTour}>
           <h3>Haven&apos;t found your dream tour?</h3>
-          <p>Just contact us and together we will create a customized program for you</p>
+          <p>
+            Just contact us and together we will create a customized program for you
+          </p>
           <Link href='/contact' className={styles.contactButton}>
             CONTACT
           </Link>
