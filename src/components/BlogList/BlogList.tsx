@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
-import styles from './BlogList.module.scss';
+import classes from './BlogList.module.scss';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -57,8 +57,8 @@ export default function BlogList({ initialBlogs = defaultBlogs }: BlogListProps)
   }, [initialBlogs]);
 
   return (
-    <section className={styles.container}>
-      <div className={styles.content}>
+    <section className={classes.container}>
+      <div className={classes.content}>
         <h2>Latest Blog Posts</h2>
         <Swiper
           modules={[Navigation]}
@@ -76,14 +76,19 @@ export default function BlogList({ initialBlogs = defaultBlogs }: BlogListProps)
         >
           {blogs.map((blog) => (
             <SwiperSlide key={blog.id}>
-              <Link href={`/blogs/${blog.id}`} className={styles.blogCard}>
-                <div className={styles.imageWrapper}>
-                  <Image src={blog.image} alt={blog.title} fill className={styles.image} />
+              <Link href={`/blogs/${blog.id}`} className={classes.blogCard}>
+                <div className={classes.imageWrapper}>
+                  <Image
+                    src={blog.image}
+                    alt={blog.title}
+                    fill
+                    className={classes.image}
+                  />
                 </div>
-                <div className={styles.blogInfo}>
+                <div className={classes.blogInfo}>
                   <h3>{blog.title}</h3>
                   <p>{blog.description}</p>
-                  <span className={styles.date}>{blog.date}</span>
+                  <span className={classes.date}>{blog.date}</span>
                 </div>
               </Link>
             </SwiperSlide>

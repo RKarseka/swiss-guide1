@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import styles from './ReviewCard.module.scss';
+import classes from './ReviewCard.module.scss';
 
 interface ReviewCardProps {
   name: string;
@@ -10,17 +10,28 @@ interface ReviewCardProps {
   image: string;
 }
 
-export default function ReviewCard({ name, location, text, image }: ReviewCardProps) {
+export default function ReviewCard({
+  name,
+  location,
+  text,
+  image,
+}: ReviewCardProps) {
   return (
-    <div className={styles.card}>
-      <div className={styles.imageContainer}>
-        <Image src={image} alt={`${name} from ${location}`} width={300} height={200} className={styles.image} />
+    <div className={classes.card}>
+      <div className={classes.imageContainer}>
+        <Image
+          src={image}
+          alt={`${name} from ${location}`}
+          width={300}
+          height={200}
+          className={classes.image}
+        />
       </div>
-      <div className={styles.content}>
-        <p className={styles.text}>{text}</p>
-        <div className={styles.author}>
-          <p className={styles.name}>{name}</p>
-          <p className={styles.location}>{location}</p>
+      <div className={classes.content}>
+        <p className={classes.text}>{text}</p>
+        <div className={classes.author}>
+          <p className={classes.name}>{name}</p>
+          <p className={classes.location}>{location}</p>
         </div>
       </div>
     </div>

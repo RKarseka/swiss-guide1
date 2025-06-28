@@ -6,7 +6,7 @@ import cx from 'clsx';
 import Image from 'next/image';
 import ReactMarkdown from 'react-markdown';
 import Link from 'next/link';
-import styles from './page.module.scss';
+import classes from './page.module.scss';
 import tours from '@/assets/app-data/05tours';
 import PageLayout from '@/components/PageLayout/PageLayout';
 import ClockIcon from '@/assets/img/icons/clock.svg';
@@ -31,20 +31,20 @@ export default function TourPage() {
 
   return (
     <PageLayout title={title}>
-      <section className={cx('mb-30', styles.section)}>
+      <section className={cx('mb-30', classes.section)}>
         <h4>{description}</h4>
-        <div className={styles.cost}>
-          <div className={styles.duration}>
+        <div className={classes.cost}>
+          <div className={classes.duration}>
             <Image src={ClockIcon} alt='Duration' width={25} height={25} />
             <h5>{duration?.toUpperCase()}</h5>
           </div>
           <h5>{cost?.toUpperCase()}</h5>
         </div>
-        <div className={styles.mainText}>
+        <div className={classes.mainText}>
           <div>
             <ReactMarkdown>{mainText}</ReactMarkdown>
           </div>
-          <div className={styles.mainSlide}>
+          <div className={classes.mainSlide}>
             <Image
               src={`/images/tours/tour${params.id}/01.jpg`}
               alt={tour.title}
@@ -53,10 +53,10 @@ export default function TourPage() {
           </div>
         </div>
 
-        <div className={styles.rightSide}>
-          <div className={styles.rightMiddle}>
+        <div className={classes.rightSide}>
+          <div className={classes.rightMiddle}>
             {attractions && (
-              <div className={styles.attractions}>
+              <div className={classes.attractions}>
                 <p>What you&#39;ll see:</p>
                 <ul>
                   {attractions.map((item, i) => (
@@ -76,7 +76,7 @@ export default function TourPage() {
             )}
           </div>
           <div>
-            <div className={cx('mb-24', styles.prices)}>
+            <div className={cx('mb-24', classes.prices)}>
               {prices?.map((price, i) => (
                 <div key={i}>
                   <div className='grid-columns'>
@@ -84,12 +84,14 @@ export default function TourPage() {
                     <h5>{price.cost?.toUpperCase()}</h5>
                   </div>
                   {'notification' in price && (
-                    <span className={styles.notification}>{price.notification}</span>
+                    <span className={classes.notification}>
+                      {price.notification}
+                    </span>
                   )}
                 </div>
               ))}
             </div>
-            <div className={cx('grid-columns', styles['buttons-container'])}>
+            <div className={cx('grid-columns', classes['buttons-container'])}>
               <BookNow />
               <a href='t.me' className={'button-link'}>
                 CONTACT
@@ -99,7 +101,7 @@ export default function TourPage() {
         </div>
       </section>
       <section></section>
-      <section className={styles.allTours}>
+      <section className={classes.allTours}>
         <Link href={`/tours`} className={'button-link'}>
           show All tours
         </Link>

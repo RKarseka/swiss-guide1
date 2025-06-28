@@ -1,4 +1,4 @@
-import styles from './page.module.scss';
+import classes from './page.module.scss';
 import BlogCard from '@/components/BlogCard/BlogCard';
 
 const blogs = [
@@ -38,9 +38,9 @@ const blogs = [
 
 export default function BlogsPage() {
   return (
-    <div className={styles.container}>
-      <h1 className={styles.title}>Blog</h1>
-      <div className={styles.grid}>
+    <div className={classes.container}>
+      <h1 className={classes.title}>Blog</h1>
+      <div className={classes.grid}>
         {blogs.map((blog) => (
           <BlogCard
             key={blog.id}

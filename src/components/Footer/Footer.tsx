@@ -1,73 +1,36 @@
 'use client';
 
 import Link from 'next/link';
-import styles from './Footer.module.scss';
+import classes from './Footer.module.scss';
 import ContactsIcons from '@/components/ContactsIcons/ContactsIcons';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className={styles.footer}>
-      <div className={styles.container}>
-        <div className={styles.content}>
-          <div className={styles.column}>
-            <h3 className={styles.title}>Swiss Guide</h3>
-            <p className={styles.description}>
-              Ваш надежный гид по Швейцарии. Мы предлагаем уникальные туры и
-              экскурсии по самым красивым местам страны.
-            </p>
-          </div>
-
-          <div className={styles.column}>
-            <h3 className={styles.title}>Навигация</h3>
-            <ul className={styles.links}>
-              <li>
-                <Link href='/'>Главная</Link>
-              </li>
-              <li>
-                <Link href='/tours'>Туры</Link>
-              </li>
-              <li>
-                <Link href='/about'>О нас</Link>
-              </li>
-              <li>
-                <Link href='/reviews'>Отзывы</Link>
-              </li>
-              <li>
-                <Link href='/blogs'>Блог</Link>
-              </li>
-              <li>
-                <Link href='/contact'>Контакты</Link>
-              </li>
-            </ul>
-          </div>
-
-          <div className={styles.column}>
-            <h3 className={styles.title}>Контакты</h3>
-            <ul className={styles.contacts}>
-              <li>
-                <a href='tel:+1234567890'>+1 (234) 567-890</a>
-              </li>
-              <li>
-                <a href='mailto:info@swissguide.com'>info@swissguide.com</a>
-              </li>
-              <li>
-                <address>Швейцария, Цюрих, Bahnhofstrasse 1</address>
-              </li>
-            </ul>
-          </div>
-
-          <div className={styles.column}>
-            <h3 className={styles.title}>Социальные сети</h3>
+    <footer className={classes.footer}>
+      <div className={'container'}>
+        <div className={classes.main}>
+          <div className={classes.contacts}>
+            <h5>Your swiss guide</h5>
             <ContactsIcons />
           </div>
+          <div className={classes.address}>
+            <p>Anna Pilkevich</p>
+            <p>IDE CHE-391.755.884</p>
+            <a href='tel:+41765701891'>+41 76 570 18 91</a>
+            <a href='mailto:anna.pilkevich@gmail.com'>anna.pilkevich@gmail.com</a>
+          </div>
+          <div className={classes.navigation}>
+            <p>Tours</p>
+            <p>Blog</p>
+            <p>Reviews</p>
+            <p>Privacy Policy</p>
+            <p>Contacts</p>
+          </div>
         </div>
-
-        <div className={styles.bottom}>
-          <p className={styles.copyright}>
-            © {currentYear} Swiss Guide. Все права защищены.
-          </p>
+        <div className={classes.bottom}>
+          <p className={classes.copyright}>© {currentYear} Swiss Guide.</p>
         </div>
       </div>
     </footer>

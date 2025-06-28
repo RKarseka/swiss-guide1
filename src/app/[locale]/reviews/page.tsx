@@ -1,4 +1,4 @@
-import styles from './page.module.scss';
+import classes from './page.module.scss';
 import ReviewCard from '@/components/ReviewCard/ReviewCard';
 
 const reviews = [
@@ -34,9 +34,9 @@ const reviews = [
 
 export default function ReviewsPage() {
   return (
-    <div className={styles.container}>
-      <h1 className={styles.title}>Reviews</h1>
-      <div className={styles.reviews}>
+    <div className={classes.container}>
+      <h1 className={classes.title}>Reviews</h1>
+      <div className={classes.reviews}>
         {reviews.map((review) => (
           <ReviewCard
             key={review.id}

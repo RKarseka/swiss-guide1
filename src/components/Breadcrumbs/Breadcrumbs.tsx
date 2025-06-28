@@ -1,6 +1,6 @@
 'use client';
 import Link from 'next/link';
-import styles from './Breadcrumbs.module.scss';
+import classes from './Breadcrumbs.module.scss';
 import { usePathname } from 'next/navigation';
 
 interface BreadcrumbsProps {
@@ -19,17 +19,17 @@ export default function Breadcrumbs({ title }: BreadcrumbsProps) {
     { href: '/current', label: title },
   ];
   return (
-    <nav className={styles.breadcrumbs}>
+    <nav className={classes.breadcrumbs}>
       <ol>
         {breadcrumbsArr.map((item, index) => (
           <li key={item.href}>
             {item.href && index < breadcrumbsArr.length - 1 ? (
               <>
                 <Link href={item.href}>{item.label}</Link>
-                <span className={styles.separator}>→</span>
+                <span className={classes.separator}>→</span>
               </>
             ) : (
-              <span className={styles.current}>{item.label}</span>
+              <span className={classes.current}>{item.label}</span>
             )}
           </li>
         ))}

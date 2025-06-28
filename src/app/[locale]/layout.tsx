@@ -3,7 +3,7 @@ import { Noto_Sans, Philosopher, Mulish } from 'next/font/google';
 import '@/styles/main.scss';
 import Navbar from '@/components/Navbar/Navbar';
 import Footer from '@/components/Footer/Footer';
-import styles from './layout.module.scss';
+import classes from './layout.module.scss';
 
 import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import { notFound } from 'next/navigation';
@@ -51,9 +51,9 @@ export default function LocaleLayout({
     <html lang={locale}>
       <body className={mainFont.className}>
         <NextIntlClientProvider locale={locale}>
-          <div className={styles.wrapper}>
+          <div className={classes.wrapper}>
             <Navbar />
-            <main className={styles.main}>{children}</main>
+            <main className={classes.main}>{children}</main>
             <Footer />
           </div>
         </NextIntlClientProvider>

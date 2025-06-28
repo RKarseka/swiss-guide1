@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import Image from 'next/image';
-import styles from './page.module.scss';
+import classes from './page.module.scss';
 import BlogNavigation from '@/components/BlogNavigation/BlogNavigation';
 
 interface BlogPost {
@@ -42,7 +42,11 @@ const blogPosts: Record<string, Record<string, BlogPost>> = {
   },
 };
 
-export async function generateMetadata({ params }: { params: { id: string; locale: string } }): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: { id: string; locale: string };
+}): Promise<Metadata> {
   const post = blogPosts[params.locale]?.[params.id];
 
   if (!post) {
@@ -63,7 +67,11 @@ export async function generateMetadata({ params }: { params: { id: string; local
   };
 }
 
-export default function BlogPostPage({ params }: { params: { id: string; locale: string } }) {
+export default function BlogPostPage({
+  params,
+}: {
+  params: { id: string; locale: string };
+}) {
   const post = blogPosts[params.locale]?.[params.id];
 
   if (!post) {
@@ -77,22 +85,32 @@ export default function BlogPostPage({ params }: { params: { id: string; locale:
   const nextPost = currentIndex < posts.length - 1 ? posts[currentIndex + 1] : null;
 
   return (
-    <article className={styles.container}>
-      <h1 className={styles.title}>{post.title}</h1>
-      <p className={styles.date}>{post.date}</p>
-      <div className={styles.imageContainer}>
-        <Image src={post.image} alt={post.title} fill className={styles.image} priority />
+    <article className={classes.container}>
+      <h1 className={classes.title}>{post.title}</h1>
+      <p className={classes.date}>{post.date}</p>
+      <div className={classes.imageContainer}>
+        <Image
+          src={post.image}
+          alt={post.title}
+          fill
+          className={classes.image}
+          priority
+        />
       </div>
-      <div className={styles.content}>
+      <div className={classes.content}>
         {post.content.map((paragraph, index) => (
-          <p key={index} className={styles.paragraph}>
+          <p key={index} className={classes.paragraph}>
             {paragraph}
           </p>
         ))}
       </div>
       <BlogNavigation
-        prevArticle={prevPost ? { id: prevPost.id, title: prevPost.title } : undefined}
-        nextArticle={nextPost ? { id: nextPost.id, title: nextPost.title } : undefined}
+        prevArticle={
+          prevPost ? { id: prevPost.id, title: prevPost.title } : undefined
+        }
+        nextArticle={
+          nextPost ? { id: nextPost.id, title: nextPost.title } : undefined
+        }
       />
     </article>
   );

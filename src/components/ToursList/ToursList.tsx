@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import styles from './ToursList.module.scss';
+import classes from './ToursList.module.scss';
 
 interface Tour {
   id: string;
@@ -69,31 +69,31 @@ export default function ToursList({ initialTours = defaultTours }: ToursListProp
   }, [initialTours]);
 
   return (
-    <section className={styles.container}>
-      <div className={styles.content}>
-        <div className={styles.header}>
+    <section className={classes.container}>
+      <div className={classes.content}>
+        <div className={classes.header}>
           <h2>Our tours in Switzerland</h2>
-          <Link href='/tours' className={styles.allToursLink}>
+          <Link href='/tours' className={classes.allToursLink}>
             ALL TOURS
           </Link>
         </div>
 
-        <div className={styles.grid}>
+        <div className={classes.grid}>
           {tours.map((tour) => (
             <Link
               key={tour.id}
               href={`/tours/${tour.id}`}
-              className={`${styles.tourCard} ${tour.fullWidth ? styles.fullWidth : ''}`}
+              className={`${classes.tourCard} ${tour.fullWidth ? classes.fullWidth : ''}`}
             >
-              <div className={styles.imageWrapper}>
+              <div className={classes.imageWrapper}>
                 <Image
                   src={tour.image}
                   alt={tour.title}
                   fill
-                  className={styles.image}
+                  className={classes.image}
                 />
               </div>
-              <div className={styles.tourInfo}>
+              <div className={classes.tourInfo}>
                 <h3>{tour.title}</h3>
                 <h4>{tour.subtitle}</h4>
                 <p>{tour.description}</p>
@@ -102,12 +102,12 @@ export default function ToursList({ initialTours = defaultTours }: ToursListProp
           ))}
         </div>
 
-        <div className={styles.customTour}>
+        <div className={classes.customTour}>
           <h3>Haven&apos;t found your dream tour?</h3>
           <p>
             Just contact us and together we will create a customized program for you
           </p>
-          <Link href='/contact' className={styles.contactButton}>
+          <Link href='/contact' className={classes.contactButton}>
             CONTACT
           </Link>
         </div>

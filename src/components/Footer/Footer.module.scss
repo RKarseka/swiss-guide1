@@ -2,102 +2,36 @@
 @import '@/styles/mixins';
 
 .footer {
-  background-color: map-get($colors, dark);
-  color: map-get($colors, light);
-  padding: map-get($spacing-sizes, 4) 0 map-get($spacing-sizes, 2);
-  width: 100%;
-  position: relative;
-  bottom: 0;
-  left: 0;
+  background-color: map-get($colors, blue);
+  color: map-get($colors, white);
+  text-transform: uppercase;
+
+  //padding: map-get($spacing-sizes, 4) 0 map-get($spacing-sizes, 2);
+  //width: 100%;
+  //position: relative;
+  //bottom: 0;
+  //left: 0;
 }
 
-.container {
-  max-width: map-get($breakpoints, large);
-  margin: 0 auto;
-  padding: 0 map-get($spacing-sizes, 3);
-}
-
-.content {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: map-get($spacing-sizes, 4);
-  margin-bottom: map-get($spacing-sizes, 4);
-
-  @include respond-to(tablet) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @include respond-to(mobile) {
-    grid-template-columns: 1fr;
-  }
-}
-
-.column {
-  h3 {
-    font-size: map-get($font-sizes, medium);
-    font-weight: map-get($font-weights, bold);
-    margin-bottom: map-get($spacing-sizes, 3);
-    color: map-get($colors, light);
-  }
-}
-
-.description {
-  color: rgba(map-get($colors, light), 0.7);
-  line-height: 1.6;
-}
-
-.links {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-
-  li {
-    margin-bottom: map-get($spacing-sizes, 2);
-
-    a {
-      color: rgba(map-get($colors, light), 0.7);
-      @include transition(color);
-
-      &:hover {
-        color: map-get($colors, primary);
-      }
-    }
-  }
+.main {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  margin-bottom: 50px;
 }
 
 .contacts {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-
-  li {
-    margin-bottom: map-get($spacing-sizes, 2);
-    color: rgba(map-get($colors, light), 0.7);
-
-    a {
-      color: rgba(map-get($colors, light), 0.7);
-      @include transition(color);
-
-      &:hover {
-        color: map-get($colors, primary);
-      }
-    }
+  h5 {
+    margin-bottom: 40px;
   }
+
 }
 
-//.social {
-//  display: flex;
-//  gap: map-get($spacing-sizes, 3);
-//
-//  a {
-//    color: rgba(map-get($colors, light), 0.7);
-//    @include transition(color);
-//
-//    &:hover {
-//      color: map-get($colors, primary);
-//    }
-//  }
-//}
+.address {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
 
 .bottom {
   border-top: 1px solid rgba(map-get($colors, light), 0.1);
@@ -105,7 +39,105 @@
   text-align: center;
 }
 
-.copyright {
-  color: rgba(map-get($colors, light), 0.5);
-  font-size: map-get($font-sizes, small);
-} 
+.navigation{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px 88px;
+}
+
+//
+//.container {
+//  max-width: map-get($breakpoints, large);
+//  margin: 0 auto;
+//  padding: 0 map-get($spacing-sizes, 3);
+//}
+//
+//.content {
+//  display: grid;
+//  grid-template-columns: repeat(4, 1fr);
+//  gap: map-get($spacing-sizes, 4);
+//  margin-bottom: map-get($spacing-sizes, 4);
+//
+//  @include respond-to(tablet) {
+//    grid-template-columns: repeat(2, 1fr);
+//  }
+//
+//  @include respond-to(mobile) {
+//    grid-template-columns: 1fr;
+//  }
+//}
+//
+//.column {
+//  h3 {
+//    font-size: map-get($font-sizes, medium);
+//    font-weight: map-get($font-weights, bold);
+//    margin-bottom: map-get($spacing-sizes, 3);
+//    color: map-get($colors, light);
+//  }
+//}
+//
+//.description {
+//  color: rgba(map-get($colors, light), 0.7);
+//  line-height: 1.6;
+//}
+//
+//.links {
+//  list-style: none;
+//  padding: 0;
+//  margin: 0;
+//
+//  li {
+//    margin-bottom: map-get($spacing-sizes, 2);
+//
+//    a {
+//      color: rgba(map-get($colors, light), 0.7);
+//      @include transition(color);
+//
+//      &:hover {
+//        color: map-get($colors, primary);
+//      }
+//    }
+//  }
+//}
+//
+//.contacts {
+//  list-style: none;
+//  padding: 0;
+//  margin: 0;
+//
+//  li {
+//    margin-bottom: map-get($spacing-sizes, 2);
+//    color: rgba(map-get($colors, light), 0.7);
+//
+//    a {
+//      color: rgba(map-get($colors, light), 0.7);
+//      @include transition(color);
+//
+//      &:hover {
+//        color: map-get($colors, primary);
+//      }
+//    }
+//  }
+//}
+//
+////.social {
+////  display: flex;
+////  gap: map-get($spacing-sizes, 3);
+////
+////  a {
+////    color: rgba(map-get($colors, light), 0.7);
+////    @include transition(color);
+////
+////    &:hover {
+////      color: map-get($colors, primary);
+////    }
+////  }
+////}
+//
+
+
+//
+//.copyright {
+//  color: rgba(map-get($colors, light), 0.5);
+//  font-size: map-get($font-sizes, small);
+//}

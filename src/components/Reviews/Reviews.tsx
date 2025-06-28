@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
-import styles from './Reviews.module.scss';
+import classes from './Reviews.module.scss';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -38,11 +38,11 @@ const reviews = [
 
 export default function Reviews() {
   return (
-    <section className={styles.container}>
-      <div className={styles.content}>
-        <div className={styles.header}>
+    <section className={classes.container}>
+      <div className={classes.content}>
+        <div className={classes.header}>
           <h2>Reviews</h2>
-          <Link href='/reviews' className={styles.allReviewsLink}>
+          <Link href='/reviews' className={classes.allReviewsLink}>
             ALL REVIEWS
           </Link>
         </div>
@@ -63,26 +63,26 @@ export default function Reviews() {
               slidesPerView: 3,
             },
           }}
-          className={styles.swiper}
+          className={classes.swiper}
         >
           {reviews.map((review) => (
             <SwiperSlide key={review.id}>
-              <div className={styles.reviewCard}>
-                <div className={styles.imageWrapper}>
+              <div className={classes.reviewCard}>
+                <div className={classes.imageWrapper}>
                   <Image
                     src={review.image}
                     alt={`${review.name}'s review`}
                     width={240}
                     height={160}
-                    className={styles.image}
+                    className={classes.image}
                   />
                 </div>
-                <div className={styles.reviewContent}>
-                  <p className={styles.reviewText}>{review.text}</p>
-                  <div className={styles.reviewInfo}>
-                    <p className={styles.name}>{review.name}</p>
-                    <p className={styles.location}>{review.location}</p>
-                    <p className={styles.date}>{review.date}</p>
+                <div className={classes.reviewContent}>
+                  <p className={classes.reviewText}>{review.text}</p>
+                  <div className={classes.reviewInfo}>
+                    <p className={classes.name}>{review.name}</p>
+                    <p className={classes.location}>{review.location}</p>
+                    <p className={classes.date}>{review.date}</p>
                   </div>
                 </div>
               </div>

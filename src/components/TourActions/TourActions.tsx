@@ -3,17 +3,17 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import BookingModal from '@/components/BookingModal/BookingModal';
-import styles from './TourActions.module.scss';
+import classes from './TourActions.module.scss';
 
 export default function TourActions() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <div className={styles.actions}>
-      <Link href='/tours' className={styles.backButton}>
+    <div className={classes.actions}>
+      <Link href='/tours' className={classes.backButton}>
         Назад к турам
       </Link>
-      <button className={styles.bookButton} onClick={() => setIsModalOpen(true)}>
+      <button className={classes.bookButton} onClick={() => setIsModalOpen(true)}>
         Забронировать тур
       </button>
 

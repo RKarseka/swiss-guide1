@@ -1,22 +1,22 @@
 'use client';
 
-import styles from './AboutGuide.module.scss';
+import classes from './AboutGuide.module.scss';
 
 export default function AboutGuide() {
   return (
     <section className='container'>
-      <div className={styles.content}>
-        <div className={styles.photo}></div>
+      <div className={classes.content}>
+        <div className={classes.photo}></div>
 
-        <div className={styles.info}>
-          <div className={styles.introduction}>
+        <div className={classes.info}>
+          <div className={classes.introduction}>
             <h3>
               Hi! I am Anna
               <br />I am your personal Tour Guide
               <br />
               in the French part of Switzerland
             </h3>
-            <div className={styles.mission}>
+            <div className={classes.mission}>
               <h5>
                 My mission is to convert your Swiss vacation into a thrilling
                 adventure, full of impressions, jaw braking views and new flavors!

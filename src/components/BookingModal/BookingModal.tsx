@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import styles from './BookingModal.module.scss';
+import classes from './BookingModal.module.scss';
 
 interface BookingModalProps {
   isOpen: boolean;
@@ -36,7 +36,10 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
     console.log('👤 Имя:', formData.name || 'Не указано');
     console.log('📞 Телефон:', formData.phone || 'Не указано');
     console.log('📧 Email:', formData.email || 'Не указано');
-    console.log('✉️ Предпочтительный способ связи:', formData.preferredContact || 'Не указано');
+    console.log(
+      '✉️ Предпочтительный способ связи:',
+      formData.preferredContact || 'Не указано'
+    );
     console.log('📅 Дата тура:', formattedDate || 'Не указана');
     console.log('👥 Количество гостей:', formData.numberOfGuests || 'Не указано');
     console.log('💬 Сообщение:', formData.message || 'Нет сообщения');
@@ -50,21 +53,21 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
   if (!isOpen) return null;
 
   return (
-    <div className={styles.overlay}>
-      <div className={styles.modal}>
-        <button className={styles.closeButton} onClick={onClose}>
+    <div className={classes.overlay}>
+      <div className={classes.modal}>
+        <button className={classes.closeButton} onClick={onClose}>
           ×
         </button>
 
-        <h2 className={styles.title}>Get in touch with us</h2>
+        <h2 className={classes.title}>Get in touch with us</h2>
 
-        <form onSubmit={handleSubmit} className={styles.form}>
+        <form onSubmit={handleSubmit} className={classes.form}>
           <input
             type='text'
             placeholder='Name'
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-            className={styles.input}
+            className={classes.input}
           />
 
           <input
@@ -72,7 +75,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
             placeholder='Phone'
             value={formData.phone}
             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-            className={styles.input}
+            className={classes.input}
           />
 
           <input
@@ -80,13 +83,15 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
             placeholder='E-mail'
             value={formData.email}
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-            className={styles.input}
+            className={classes.input}
           />
 
           <select
             value={formData.preferredContact}
-            onChange={(e) => setFormData({ ...formData, preferredContact: e.target.value })}
-            className={styles.select}
+            onChange={(e) =>
+              setFormData({ ...formData, preferredContact: e.target.value })
+            }
+            className={classes.select}
           >
             <option value=''>Preffered way of contact</option>
             <option value='phone'>Phone</option>
@@ -94,20 +99,24 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
             <option value='whatsapp'>WhatsApp</option>
           </select>
 
-          <div className={styles.row}>
+          <div className={classes.row}>
             <input
               type='date'
               value={formData.tourDate}
-              onChange={(e) => setFormData({ ...formData, tourDate: e.target.value })}
-              className={styles.input}
+              onChange={(e) =>
+                setFormData({ ...formData, tourDate: e.target.value })
+              }
+              className={classes.input}
             />
 
             <input
               type='number'
               placeholder='Number of Guests'
               value={formData.numberOfGuests}
-              onChange={(e) => setFormData({ ...formData, numberOfGuests: e.target.value })}
-              className={styles.input}
+              onChange={(e) =>
+                setFormData({ ...formData, numberOfGuests: e.target.value })
+              }
+              className={classes.input}
               min='1'
             />
           </div>
@@ -116,17 +125,18 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
             placeholder='Leave a message about your trip.'
             value={formData.message}
             onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-            className={styles.textarea}
+            className={classes.textarea}
             rows={4}
           />
 
-          <p className={styles.disclaimer}>
+          <p className={classes.disclaimer}>
             Please read before continuing!
             <br />
-            This experience is booked on request. The owner of the experience will respond to the request within 2 days.
+            This experience is booked on request. The owner of the experience will
+            respond to the request within 2 days.
           </p>
 
-          <button type='submit' className={styles.submitButton}>
+          <button type='submit' className={classes.submitButton}>
             SEND A REQUEST
           </button>
         </form>

@@ -1,5 +1,5 @@
 import cx from 'clsx';
-import styles from './OneTourPreview.module.scss';
+import classes from './OneTourPreview.module.scss';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -16,17 +16,17 @@ export default function OneTourPreview({ tour, index }: Props) {
   return (
     <Link
       href={`/tours/${index}`}
-      className={cx(styles.tourCard, tour.fullWidth && styles.fullWidth)}
+      className={cx(classes.tourCard, tour.fullWidth && classes.fullWidth)}
     >
-      <div className={styles.imageWrapper}>
+      <div className={classes.imageWrapper}>
         <Image
           src={`/images/tours/tour${index}/01.jpg`}
           alt={tour.titlePreview}
           fill
-          className={styles.image}
+          className={classes.image}
         />
       </div>
-      <div className={styles.tourInfo}>
+      <div className={classes.tourInfo}>
         <div>
           <h3>{tour.titlePreview}</h3>
           <p>{tour.description}</p>
