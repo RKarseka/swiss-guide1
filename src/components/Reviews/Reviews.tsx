@@ -64,23 +64,21 @@ export default function Reviews() {
         {reviews.map((review) => (
           <SwiperSlide key={review.id}>
             <div className={classes.reviewCard}>
-              <div className={classes.imageWrapper}>
+              <div className={classes.info}>
                 <Image
-                  src={review.image}
+                  src={'/images/reviews/mini01.jpg'}
                   alt={`${review.name}'s review`}
-                  width={240}
+                  width={120}
                   height={160}
                   className={classes.image}
                 />
-              </div>
-              <div className={classes.reviewContent}>
-                <p className={classes.reviewText}>{review.text}</p>
-                <div className={classes.reviewInfo}>
-                  <p className={classes.name}>{review.name}</p>
-                  <p className={classes.location}>{review.location}</p>
-                  <p className={classes.date}>{review.date}</p>
+                <div>
+                  <p className='name'>Alena</p>
+                  <p className='place'>Lausanne</p>
+                  <p className='date'>March’25</p>
                 </div>
               </div>
+              <p className={classes.reviewText}>{review.text}</p>
             </div>
           </SwiperSlide>
         ))}

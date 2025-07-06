@@ -6,12 +6,12 @@ import MainHeader from '@/components/MainHeader/MainHeader';
 
 export default function Home() {
   return (
-    <main>
+    <>
       <MainHeader />
-      {/*<AboutGuide />*/}
+      <AboutGuide />
       <ToursList />
-      {/*<Reviews />*/}
-      {/*<BlogList />*/}
-    </main>
+      <Reviews />
+      <BlogList />
+    </>
   );
 }
