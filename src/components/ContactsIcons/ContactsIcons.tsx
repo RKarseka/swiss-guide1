@@ -1,3 +1,4 @@
+import cx from 'clsx';
 import InstagramIcon from '@/assets/img/icons/contactsIcons/instagram.svg';
 import SmsIcon from '@/assets/img/icons/contactsIcons/sms.svg';
 import PhoneIcon from '@/assets/img/icons/contactsIcons/phone.svg';
@@ -5,7 +6,11 @@ import WhatsappIcon from '@/assets/img/icons/contactsIcons/whatsapp.svg';
 import EmailIcon from '@/assets/img/icons/contactsIcons/email.svg';
 import classes from './ContactsIcons.module.scss';
 
-export default function ContactsIcons() {
+type Props = {
+  classNames?: string;
+};
+
+export default function ContactsIcons({ classNames }: Props) {
   const ContactsIconsData = [
     {
       label: 'Instagram',
@@ -34,7 +39,7 @@ export default function ContactsIcons() {
     },
   ];
   return (
-    <div className={classes.contacts}>
+    <div className={cx(classes.contacts, classNames)}>
       {ContactsIconsData.map(({ label, link, icon }) => (
         <a className={classes.link} key={label} href={link} aria-label={label}>
           {icon}

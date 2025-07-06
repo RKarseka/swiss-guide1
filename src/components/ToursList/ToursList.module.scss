@@ -1,6 +1,23 @@
 @import '@/styles/variables';
 @import '@/styles/mixins';
 
+.contactsLinks {
+  justify-content: center;
+
+  a:nth-child(n+3) {
+    path {
+      fill: map-get($colors, red);
+    }
+  }
+
+  a:nth-child(2), a:nth-child(1) {
+    path {
+      stroke: map-get($colors, red);
+    }
+  }
+}
+
+
 .container {
   padding: 4rem map-get($spacing-sizes, 4);
   background-color: map-get($colors, light);
@@ -44,26 +61,26 @@
 }
 
 .grid {
-  display: grid;///
-  grid-template-columns: repeat(2, 1fr);///
-  gap: 1.5rem;///
+  display: grid; ///
+  grid-template-columns: repeat(2, 1fr); ///
+  gap: 1.5rem; ///
   margin-bottom: 3rem;
 
   @include respond-to(tablet) {
-    grid-template-columns: 1fr;///
+    grid-template-columns: 1fr; ///
   }
 }
 
 .tourCard {
-  position: relative;///
-  border-radius: 12px;///
-  overflow: hidden;///
-  text-decoration: none;///
+  position: relative; ///
+  border-radius: 12px; ///
+  overflow: hidden; ///
+  text-decoration: none; ///
   aspect-ratio: 4/3;
 
   &.fullWidth {
-    grid-column: 1 / -1;///
-    aspect-ratio: 2/1;///
+    grid-column: 1 / -1; ///
+    aspect-ratio: 2/1; ///
   }
 
   &:hover {

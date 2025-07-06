@@ -4,13 +4,16 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import classes from './ToursList.module.scss';
+import ContactsIcons from '@/components/ContactsIcons/ContactsIcons';
+import SectionComponent from '@/components/SectionComponent/SectionComponent';
+import toursData from '@/assets/app-data/05tours';
 
 interface Tour {
   id: string;
-  title: string;
-  subtitle: string;
+  titlePreview: string;
+  // subtitle: string;
   description: string;
-  image: string;
+  // image: string;
   fullWidth?: boolean;
 }
 
@@ -18,7 +21,7 @@ interface ToursListProps {
   initialTours?: Tour[];
 }
 
-const defaultTours: Tour[] = [
+const defaultTours = [
   {
     id: 'geneva',
     title: 'Geneva',
@@ -61,7 +64,7 @@ const defaultTours: Tour[] = [
   },
 ];
 
-export default function ToursList({ initialTours = defaultTours }: ToursListProps) {
+export default function ToursList({ initialTours = toursData }: ToursListProps) {
   const [tours, setTours] = useState<Tour[]>(initialTours);
 
   useEffect(() => {
@@ -69,49 +72,44 @@ export default function ToursList({ initialTours = defaultTours }: ToursListProp
   }, [initialTours]);
 
   return (
-    <section className={classes.container}>
-      <div className={classes.content}>
-        <div className={classes.header}>
-          <h2>Our tours in Switzerland</h2>
-          <Link href='/tours' className={classes.allToursLink}>
-            ALL TOURS
+    <SectionComponent
+      header={'Our tours in Switzerland'}
+      button={{ link: '/tours', label: 'ALL TOURS' }}
+    >
+      <div className={classes.grid}>
+        {tours.map((tour) => (
+          <Link
+            key={tour.id}
+            href={`/tours/${tour.id}`}
+            className={`${classes.tourCard} ${tour.fullWidth ? classes.fullWidth : ''}`}
+          >
+            <div className={classes.imageWrapper}>
+              <Image
+                src={'/images/tours/01.jpg'}
+                alt={tour.titlePreview}
+                fill
+                className={classes.image}
+              />
+            </div>
+            <div className={classes.tourInfo}>
+              <h3>{tour.titlePreview}</h3>
+              <p>{tour.description}</p>
+            </div>
           </Link>
-        </div>
-
-        <div className={classes.grid}>
-          {tours.map((tour) => (
-            <Link
-              key={tour.id}
-              href={`/tours/${tour.id}`}
-              className={`${classes.tourCard} ${tour.fullWidth ? classes.fullWidth : ''}`}
-            >
-              <div className={classes.imageWrapper}>
-                <Image
-                  src={tour.image}
-                  alt={tour.title}
-                  fill
-                  className={classes.image}
-                />
-              </div>
-              <div className={classes.tourInfo}>
-                <h3>{tour.title}</h3>
-                <h4>{tour.subtitle}</h4>
-                <p>{tour.description}</p>
-              </div>
-            </Link>
-          ))}
-        </div>
-
-        <div className={classes.customTour}>
-          <h3>Haven&apos;t found your dream tour?</h3>
-          <p>
-            Just contact us and together we will create a customized program for you
-          </p>
-          <Link href='/contact' className={classes.contactButton}>
-            CONTACT
-          </Link>
-        </div>
+        ))}
       </div>
-    </section>
+
+      <div className={classes.customTour}>
+        <h3>Haven&apos;t found your dream tour?</h3>
+        <p>
+          Just contact us and together we will create a customized program for you
+        </p>
+        <Link href='/contact' className={classes.contactButton}>
+          CONTACT
+        </Link>
+        <p>or</p>
+        <ContactsIcons classNames={classes.contactsLinks} />
+      </div>
+    </SectionComponent>
   );
 }

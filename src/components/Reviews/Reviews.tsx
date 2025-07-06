@@ -8,6 +8,7 @@ import classes from './Reviews.module.scss';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
+import SectionComponent from '@/components/SectionComponent/SectionComponent';
 
 const reviews = [
   {
@@ -38,60 +39,54 @@ const reviews = [
 
 export default function Reviews() {
   return (
-    <section className={classes.container}>
-      <div className={classes.content}>
-        <div className={classes.header}>
-          <h2>Reviews</h2>
-          <Link href='/reviews' className={classes.allReviewsLink}>
-            ALL REVIEWS
-          </Link>
-        </div>
-
-        <Swiper
-          modules={[Navigation]}
-          navigation={{
-            prevEl: '.swiper-button-prev',
-            nextEl: '.swiper-button-next',
-          }}
-          spaceBetween={24}
-          slidesPerView={1}
-          breakpoints={{
-            768: {
-              slidesPerView: 2,
-            },
-            1024: {
-              slidesPerView: 3,
-            },
-          }}
-          className={classes.swiper}
-        >
-          {reviews.map((review) => (
-            <SwiperSlide key={review.id}>
-              <div className={classes.reviewCard}>
-                <div className={classes.imageWrapper}>
-                  <Image
-                    src={review.image}
-                    alt={`${review.name}'s review`}
-                    width={240}
-                    height={160}
-                    className={classes.image}
-                  />
-                </div>
-                <div className={classes.reviewContent}>
-                  <p className={classes.reviewText}>{review.text}</p>
-                  <div className={classes.reviewInfo}>
-                    <p className={classes.name}>{review.name}</p>
-                    <p className={classes.location}>{review.location}</p>
-                    <p className={classes.date}>{review.date}</p>
-                  </div>
+    <SectionComponent
+      header={'Reviews'}
+      button={{ link: '/reviews', label: 'ALL REVIEWS' }}
+    >
+      <Swiper
+        modules={[Navigation]}
+        navigation={{
+          prevEl: '.swiper-button-prev',
+          nextEl: '.swiper-button-next',
+        }}
+        spaceBetween={24}
+        slidesPerView={1}
+        breakpoints={{
+          768: {
+            slidesPerView: 2,
+          },
+          1024: {
+            slidesPerView: 3,
+          },
+        }}
+        className={classes.swiper}
+      >
+        {reviews.map((review) => (
+          <SwiperSlide key={review.id}>
+            <div className={classes.reviewCard}>
+              <div className={classes.imageWrapper}>
+                <Image
+                  src={review.image}
+                  alt={`${review.name}'s review`}
+                  width={240}
+                  height={160}
+                  className={classes.image}
+                />
+              </div>
+              <div className={classes.reviewContent}>
+                <p className={classes.reviewText}>{review.text}</p>
+                <div className={classes.reviewInfo}>
+                  <p className={classes.name}>{review.name}</p>
+                  <p className={classes.location}>{review.location}</p>
+                  <p className={classes.date}>{review.date}</p>
                 </div>
               </div>
-            </SwiperSlide>
-          ))}
-          <div className='swiper-button-prev' />
-          <div className='swiper-button-next' />
-        </Swiper>
-      </div>
-    </section>
+            </div>
+          </SwiperSlide>
+        ))}
+        <div className='swiper-button-prev' />
+        <div className='swiper-button-next' />
+      </Swiper>
+    </SectionComponent>
   );
 }
