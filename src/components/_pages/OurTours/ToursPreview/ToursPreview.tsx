@@ -1,6 +1,6 @@
-import toursData from '@/assets/app-data/05tours';
 import OneTourPreview from '@/components/_pages/OurTours/OneTourPreview/OneTourPreview';
 import classes from './ToursPreview.module.scss';
+import { toursData } from '@/assets/app-data/05tours';
 
 export default function ToursPreview() {
   return (

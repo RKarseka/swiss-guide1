@@ -7,7 +7,6 @@ export default function AboutGuide() {
     <section className='container'>
       <div className={classes.content}>
         <div className={classes.photo}></div>
-
         <div className={classes.info}>
           <div className={classes.introduction}>
             <h3>

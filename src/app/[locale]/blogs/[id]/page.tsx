@@ -22,7 +22,7 @@ export default function BlogPostPage({ params }: Props) {
     <SectionComponent header={post.title} fields={{ date: post.date }}>
       <div className={classes.logo}>
         <Image
-          src={'/images/blogs/blog01mini.jpg'}
+          src={'/images/blogs/blog01logo.jpg'}
           alt={post.title}
           fill
           className={classes.image}

@@ -46,7 +46,7 @@ h5 {
   font-weight: map-get($font-weights, sbold);
 }
 
-span{
+span {
   font-size: map-get($font-sizes, small);
   font-weight: map-get($font-weights, regular);
 }
@@ -74,7 +74,6 @@ strong {
 
   &:hover {
     background-color: map-get($colors, red-hover);
-
   }
 }
 

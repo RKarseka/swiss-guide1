@@ -1,4 +1,19 @@
-export default [
+export type TourData = {
+  id: string;
+  addons?: string;
+  attractions?: string[];
+  cost: string;
+  description: string;
+  duration: string;
+  fullWidth?: boolean;
+  mainText: string;
+  prices?: { cost: string; title: string; notification?: string }[];
+  shortDescription?: string;
+  title: string;
+  titlePreview: string;
+};
+
+export const toursData: TourData[] = [
   {
     id: 'geneva',
     duration: '2,5-3 hours',

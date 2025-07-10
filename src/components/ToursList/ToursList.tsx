@@ -6,7 +6,8 @@ import Link from 'next/link';
 import classes from './ToursList.module.scss';
 import ContactsIcons from '@/components/ContactsIcons/ContactsIcons';
 import SectionComponent from '@/components/SectionComponent/SectionComponent';
-import toursData from '@/assets/app-data/05tours';
+import { ContactsSection } from '@/components/ContactsSection/ContactsSection';
+import { toursData } from '@/assets/app-data/05tours';
 
 interface Tour {
   id: string;
@@ -98,18 +99,7 @@ export default function ToursList({ initialTours = toursData }: ToursListProps) 
           </Link>
         ))}
       </div>
-
-      <div className={classes.customTour}>
-        <h3>Haven&apos;t found your dream tour?</h3>
-        <p>
-          Just contact us and together we will create a customized program for you
-        </p>
-        <Link href='/contact' className={classes.contactButton}>
-          CONTACT
-        </Link>
-        <p>or</p>
-        <ContactsIcons classNames={classes.contactsLinks} />
-      </div>
+      <ContactsSection />
     </SectionComponent>
   );
 }

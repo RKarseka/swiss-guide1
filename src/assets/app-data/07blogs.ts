@@ -5,6 +5,7 @@ export type blog = {
   description?: string;
   date?: string;
 };
+
 const blogs: blog[] = [
   {
     key: 'geneva',

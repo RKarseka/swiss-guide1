@@ -1,9 +1,14 @@
-@import 'variables';
-@import 'mixins';
+//@import 'variables';
+//@import 'mixins';
 
-.logo{
+.logo {
   position: relative;
   height: 468px;
+
+  img {
+    object-fit: cover;
+    border-radius: 10px;
+  }
 }
 
 //
