@@ -6,13 +6,13 @@ export type Blog = {
   date?: string;
 };
 
-const blogs: Blog[] = [
+const blogsData: Blog[] = [
   {
     key: 'geneva',
     img: '',
     date: '15.05.2025',
     title:
-      'Geneva day trips: 5 must-see places near Geneva you can visit in one day',
+      'Lavaux. The exquisite Swiss wines from ones the most beautiful vineyards in Europe',
     description:
       'What are the main attractions not to be missed located in the proximity to Geneva? Here are our suggestions which would make the most of your visit',
   },
@@ -35,4 +35,4 @@ const blogs: Blog[] = [
   },
 ];
 
-export default blogs;
+export default blogsData;

@@ -2,6 +2,8 @@
 
 import PageLayout from '@/components/PageLayout/PageLayout';
 import { useParams } from 'next/navigation';
+import blogsData, { Blog } from '@/assets/app-data/07blogs';
+import BlogPage from '@/components/_pages/Blog/BlogPage/BlogPage';
 
 // export function generateMetadata(key: string) {
 //   return blogsData.find((i) => i.key === key) || blogsData[0];
@@ -13,26 +15,19 @@ type Props = {
 
 export default function BlogPostPage() {
   const params = useParams();
+  const id = params?.id as string;
+  if (!id) return null;
 
-  console.log('const params = ', params);
-
-  // const {} = generateMetadata(params.id);
+  const blog: Blog = blogsData.find((i) => i.key === id) || blogsData[0];
   // const prevPost = currentIndex > 0 ? posts[currentIndex - 1] : null;
   // const nextPost = currentIndex < posts.length - 1 ? posts[currentIndex + 1] : null;
 
-  return <PageLayout title={'Blog'}>blog</PageLayout>;
+  return (
+    <PageLayout title={blog.title}>
+      <BlogPage blog={blog} />
+    </PageLayout>
+  );
 }
-
-// <SectionComponent header={post.title} fields={{ date: post.date }}>
-//   <div className={classes.logo}>
-//     <Image
-//       src={'/images/blogs/blog01logo.jpg'}
-//       alt={post.title}
-//       fill
-//       className={classes.image}
-//     />
-//   </div>
-// </SectionComponent>
 
 // <article className={classes.container}>
 //   <h1 className={classes.title}>{post.title}</h1>
