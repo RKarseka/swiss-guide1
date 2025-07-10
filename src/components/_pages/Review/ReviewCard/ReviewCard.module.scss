@@ -1,0 +1,28 @@
+.card {
+  display: flex;
+  margin-bottom: 60px;
+  gap: 50px;
+}
+
+.photo {
+  width: 124px;
+  height: 168px;
+  position: relative;
+
+  img {
+    object-fit: contain;
+  }
+}
+
+.text {
+  flex: 1;
+}
+
+.general {
+  margin-bottom: 14px;
+}
+
+.author {
+  display: flex;
+  gap: 36px;
+}

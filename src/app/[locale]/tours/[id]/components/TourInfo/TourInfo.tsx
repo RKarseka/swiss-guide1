@@ -1,10 +1,10 @@
+import React, { useState } from 'react';
 import cx from 'clsx';
 import classes from '@/app/[locale]/tours/[id]/page.module.scss';
 import Image from 'next/image';
 import ClockIcon from '@/assets/img/icons/clock.svg';
 import ReactMarkdown from 'react-markdown';
 import BookNow from '@/components/BookNow/BookNow';
-import React, { useState } from 'react';
 import { TourData } from '@/assets/app-data/05tours';
 import SectionComponent from '@/components/SectionComponent/SectionComponent';
 
@@ -31,7 +31,7 @@ export function TourInfo({ tour, id }: Props) {
         <h4>{description}</h4>
         <div className={classes.cost}>
           <div className={classes.duration}>
-            <Image src={ClockIcon} alt='Duration' width={25} height={25} />
+            <ClockIcon width={25} height={25} />
             <h5>{duration?.toUpperCase()}</h5>
           </div>
           <h5>{cost?.toUpperCase()}</h5>

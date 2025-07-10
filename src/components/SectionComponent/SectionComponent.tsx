@@ -12,11 +12,12 @@ type Props = {
     link: string;
     label: string;
   };
+  className?: string;
 };
 
-function SectionComponent({ children, header, button, fields }: Props) {
+function SectionComponent({ children, header, button, fields, className }: Props) {
   return (
-    <section className={cx(classes.section)}>
+    <section className={cx(classes.section, className)}>
       <div className={classes.header}>
         <h2>{header}</h2>
         {button && (
