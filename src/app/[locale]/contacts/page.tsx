@@ -1,11 +1,11 @@
 import PageLayout from '@/components/PageLayout/PageLayout';
 import { OtherTours } from '@/app/[locale]/tours/[id]/components/OtherTours/OtherTours';
-import BlogsPage from '@/components/_pages/Blogs/BlogsPage/BlogsPage';
 
-export default function Blogs() {
+export default Contacts;
+
+function Contacts() {
   return (
-    <PageLayout title={'Blog'}>
-      <BlogsPage />
+    <PageLayout title={'Contacts'}>
       <OtherTours />
     </PageLayout>
   );

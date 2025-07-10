@@ -9,9 +9,9 @@ export default function BlogsCard({ blog }: Props) {
   const { key, title, description, date } = blog;
   return (
     <div>
-      <div className={classes.photo}>
+      <Link href={`/blogs/${key}`} className={classes.photo}>
         <Image src={`/images/blogs/01.jpg`} alt={'blog'} fill />
-      </div>
+      </Link>
       <div>
         <p className={classes.header}>{title}</p>
         <p className={classes.main}>{description}</p>

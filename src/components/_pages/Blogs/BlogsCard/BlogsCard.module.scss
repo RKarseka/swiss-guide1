@@ -3,6 +3,7 @@
 
 .photo {
   @include img-container;
+  display: block;
   height: 447px;
   margin-bottom: 20px;
 }
