@@ -1,4 +1,4 @@
-export type blog = {
+export type Blog = {
   key: string;
   img: string;
   title: string;
@@ -6,7 +6,7 @@ export type blog = {
   date?: string;
 };
 
-const blogs: blog[] = [
+const blogs: Blog[] = [
   {
     key: 'geneva',
     img: '',

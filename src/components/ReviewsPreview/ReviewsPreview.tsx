@@ -1,10 +1,9 @@
 'use client';
 
 import Image from 'next/image';
-import Link from 'next/link';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
-import classes from './Reviews.module.scss';
+import classes from './ReviewsPreview.module.scss';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -37,7 +36,7 @@ const reviews = [
   },
 ];
 
-export default function Reviews() {
+export default function ReviewsPreview() {
   return (
     <SectionComponent
       header={'Reviews'}

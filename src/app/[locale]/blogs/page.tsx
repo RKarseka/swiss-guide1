@@ -1,5 +1,6 @@
-import classes from './page.module.scss';
-import BlogCard from '@/components/BlogCard/BlogCard';
+import PageLayout from '@/components/PageLayout/PageLayout';
+import { OtherTours } from '@/app/[locale]/tours/[id]/components/OtherTours/OtherTours';
+import BlogsPage from '@/components/_pages/Blogs/BlogsPage/BlogsPage';
 
 const blogs = [
   {
@@ -36,22 +37,13 @@ const blogs = [
   },
 ];
 
-export default function BlogsPage() {
+export default function Blogs() {
   return (
-    <div className={classes.container}>
-      <h1 className={classes.title}>Blog</h1>
-      <div className={classes.grid}>
-        {blogs.map((blog) => (
-          <BlogCard
-            key={blog.id}
-            id={blog.id}
-            title={blog.title}
-            description={blog.description}
-            image={blog.image}
-            date={blog.date}
-          />
-        ))}
-      </div>
-    </div>
+    <>
+      <PageLayout title={'Blog'}>
+        <BlogsPage />
+        <OtherTours />
+      </PageLayout>
+    </>
   );
 }

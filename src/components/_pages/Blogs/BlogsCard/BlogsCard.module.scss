@@ -1,0 +1,22 @@
+@import '@/styles/mixins';
+
+
+.photo {
+  @include img-container;
+  height: 447px;
+  margin-bottom: 20px;
+}
+
+.header {
+  margin-bottom: 21px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main {
+  margin-bottom: 21px;
+
+}

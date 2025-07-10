@@ -2,7 +2,7 @@ import PageLayout from '@/components/PageLayout/PageLayout';
 import ToursPreview from '@/components/_pages/OurTours/ToursPreview/ToursPreview';
 import { useTranslations } from 'next-intl';
 import { ContactsSection } from '@/components/ContactsSection/ContactsSection';
-import Reviews from '@/components/Reviews/Reviews';
+import ReviewsPreview from '@/components/ReviewsPreview/ReviewsPreview';
 
 export default function ToursPage() {
   const t = useTranslations('ToursPage');
@@ -10,7 +10,7 @@ export default function ToursPage() {
     <PageLayout title={t('title')}>
       <ToursPreview />
       <ContactsSection />
-      <Reviews />
+      <ReviewsPreview />
     </PageLayout>
   );
 }

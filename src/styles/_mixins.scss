@@ -170,3 +170,12 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+@mixin img-container {
+  position: relative;
+
+  img {
+    object-fit: cover;
+    border-radius: 10px;
+  }
+}
