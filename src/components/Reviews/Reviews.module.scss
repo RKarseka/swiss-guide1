@@ -7,7 +7,7 @@
   border-radius: 10px;
   padding: map-get($spacing-sizes, 30);
   overflow: hidden;
-
+background-color: map-get($colors, white);
 }
 
 .info {

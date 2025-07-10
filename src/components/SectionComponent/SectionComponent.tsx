@@ -19,7 +19,11 @@ function SectionComponent({ children, header, button, fields }: Props) {
     <section className={cx('container', classes.section)}>
       <div className={classes.header}>
         <h2>{header}</h2>
-        {button && <Link href={button.link}>{button.label}</Link>}{' '}
+        {button && (
+          <Link href={button.link} className={'button-link'}>
+            {button.label}
+          </Link>
+        )}{' '}
       </div>
       <div>{fields?.date}</div>
       {children}

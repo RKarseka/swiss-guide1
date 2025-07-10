@@ -19,10 +19,16 @@ export default function BlogPostPage({ params }: Props) {
   // const nextPost = currentIndex < posts.length - 1 ? posts[currentIndex + 1] : null;
 
   return (
-    <SectionComponent
-      header={post.title}
-      fields={{ date: post.date }}
-    ></SectionComponent>
+    <SectionComponent header={post.title} fields={{ date: post.date }}>
+      <div className={classes.logo}>
+        <Image
+          src={'/images/blogs/blog01mini.jpg'}
+          alt={post.title}
+          fill
+          className={classes.image}
+        />
+      </div>
+    </SectionComponent>
 
     // <article className={classes.container}>
     //   <h1 className={classes.title}>{post.title}</h1>
