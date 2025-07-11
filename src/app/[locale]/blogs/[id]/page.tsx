@@ -4,6 +4,7 @@ import PageLayout from '@/components/PageLayout/PageLayout';
 import { useParams } from 'next/navigation';
 import blogsData, { Blog } from '@/assets/app-data/07blogs';
 import BlogPage from '@/components/_pages/Blog/BlogPage/BlogPage';
+import { OtherTours } from '@/app/[locale]/tours/[id]/components/OtherTours/OtherTours';
 
 // export function generateMetadata(key: string) {
 //   return blogsData.find((i) => i.key === key) || blogsData[0];
@@ -25,6 +26,7 @@ export default function BlogPostPage() {
   return (
     <PageLayout title={blog.title}>
       <BlogPage blog={blog} />
+      <OtherTours />
     </PageLayout>
   );
 }
