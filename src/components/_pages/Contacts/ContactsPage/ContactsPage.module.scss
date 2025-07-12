@@ -1,0 +1,17 @@
+@import '@/styles/mixins';
+
+.intro {
+  display: flex;
+
+  p {
+    flex: 1;
+  }
+}
+
+
+.photo {
+  width: 375px;
+  //height: 500px;
+  position: relative;
+  @include img-container;
+}
