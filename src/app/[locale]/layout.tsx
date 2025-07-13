@@ -1,14 +1,15 @@
 import type { Metadata } from 'next';
-import { Noto_Sans, Philosopher, Mulish } from 'next/font/google';
+import { Mulish, Philosopher } from 'next/font/google';
 import '@/styles/main.scss';
 import Navbar from '@/components/Navbar/Navbar';
 import Footer from '@/components/Footer/Footer';
 import classes from './layout.module.scss';
 
-import { NextIntlClientProvider, hasLocale } from 'next-intl';
+import { hasLocale, NextIntlClientProvider } from 'next-intl';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { getMetadata } from '@/i18n/metadata';
+import { getPages, parseNotionPages } from '@/notion/index';
 
 // const notoSans = Noto_Sans({
 //   weight: ['300', '400', '500', '700'],
@@ -36,21 +37,24 @@ export async function generateMetadata({
   return getMetadata(locale);
 }
 
-export default function LocaleLayout({
-  children,
-  params: { locale },
-}: {
+type Props = {
   children: React.ReactNode;
   params: { locale: string };
-}) {
+};
+
+export default async function LocaleLayout({ children, params: { locale } }: Props) {
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
 
+  const data = parseNotionPages(await getPages());
+
+  console.log('const data = ', data);
+
   return (
     <html lang={locale}>
       <body className={mainFont.className}>
-        <NextIntlClientProvider locale={locale}>
+        <NextIntlClientProvider locale={locale} data={data}>
           <div className={classes.wrapper}>
             <Navbar />
             <main className={classes.main}>{children}</main>
