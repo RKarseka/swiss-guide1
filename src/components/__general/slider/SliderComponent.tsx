@@ -22,10 +22,10 @@ export default function SliderComponent<T extends { key: React.Key }>({
   slides,
   slideComponent: SlideComponent,
 }: Props<T>) {
-  const navigation = {
-    prevEl: '.swiper-button-prev',
-    nextEl: '.swiper-button-next',
-  };
+  const prefix = SlideComponent.name?.toLowerCase() || 'slider';
+  const prevEl = `.${prefix}-swiper-button-prev`;
+  const nextEl = `.${prefix}-swiper-button-next`;
+  const navigation = { prevEl, nextEl };
   const breakpoints = { 768: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } };
   return (
     <div className={classes.swiperWrapper}>
@@ -48,13 +48,13 @@ export default function SliderComponent<T extends { key: React.Key }>({
       </Swiper>
 
       <div className={classes.controls}>
-        <div className={cx('swiper-button-prev', classes.swiperButtonPrev)}>
+        <div className={cx(prevEl.slice(1), classes.swiperButtonPrev)}>
           <button>
             <ArrowLeft />
           </button>
         </div>
         <div className={cx('swiper-pagination', classes.swiperPagination)} />
-        <div className={cx('swiper-button-next', classes.swiperButtonNext)}>
+        <div className={cx(nextEl.slice(1), classes.swiperButtonNext)}>
           <button>
             <ArrowRight />
           </button>
