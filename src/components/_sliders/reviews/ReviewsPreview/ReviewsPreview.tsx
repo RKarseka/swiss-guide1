@@ -7,7 +7,7 @@ import 'swiper/css/pagination';
 import SectionComponent from '@/components/SectionComponent/SectionComponent';
 import { useNotionData } from '@/notion/NotionDataProvider';
 import ReviewsSlide from '@/components/_sliders/reviews/ReviewSlide/ReviewSlide';
-import SliderComponent from '@/components/general/slider/SliderComponent';
+import SliderComponent from '@/components/__general/slider/SliderComponent';
 
 export default function ReviewsPreview() {
   const { reviewData } = useNotionData();

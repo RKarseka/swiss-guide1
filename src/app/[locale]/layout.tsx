@@ -48,13 +48,13 @@ export default async function LocaleLayout({ children, params: { locale } }: Pro
     notFound();
   }
 
-  const reviewData = parseNotionPages(await getPages());
+  const data = parseNotionPages(await getPages());
 
   return (
     <html lang={locale}>
       <body className={mainFont.className}>
         <NextIntlClientProvider locale={locale}>
-          <NotionDataProvider data={{ reviewData }}>
+          <NotionDataProvider data={data}>
             <div className={classes.wrapper}>
               <Navbar />
               <main className={classes.main}>{children}</main>

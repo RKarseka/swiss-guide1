@@ -6,3 +6,7 @@ export type Review = {
   img: string;
   place: string;
 };
+
+export type Blog = {
+  key: string;
+};

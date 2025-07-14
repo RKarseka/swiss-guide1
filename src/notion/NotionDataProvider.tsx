@@ -1,6 +1,7 @@
 'use client';
 
 import { createContext, useContext } from 'react';
+import { Blog, Review } from '@/assets/types/types';
 
 // Создаем контекст для данных
 export const NotionDataContext = createContext<any>({});
@@ -19,11 +20,21 @@ type NotionDataProviderProps = {
   data: any;
 };
 
+type DataType = 'blogData' | 'reviewData';
+
 export default function NotionDataProvider({
   children,
   data,
 }: NotionDataProviderProps) {
+  const value: { blogData: Blog[]; reviewData: Review[] } = {
+    blogData: [],
+    reviewData: [],
+  };
+
+  for (const el of data) {
+    value[(el.type + 'Data') as DataType].push(el);
+  }
   return (
-    <NotionDataContext.Provider value={data}>{children}</NotionDataContext.Provider>
+    <NotionDataContext.Provider value={value}>{children}</NotionDataContext.Provider>
   );
 }

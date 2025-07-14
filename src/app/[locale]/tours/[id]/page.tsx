@@ -6,7 +6,7 @@ import PageLayout from '@/components/PageLayout/PageLayout';
 import { toursData } from '@/assets/app-data/05tours';
 import { OtherTours } from '@/app/[locale]/tours/[id]/components/OtherTours/OtherTours';
 import { TourInfo } from '@/app/[locale]/tours/[id]/components/TourInfo/TourInfo';
-import ReviewsPreview from '@/components/ReviewsPreview/ReviewsPreview';
+import ReviewsPreview from '@/components/_sliders/reviews/ReviewsPreview/ReviewsPreview';
 
 export default function TourPage() {
   const params = useParams();
