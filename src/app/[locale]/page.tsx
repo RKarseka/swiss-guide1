@@ -5,9 +5,7 @@ import MainHeader from '@/components/MainHeader/MainHeader';
 import ReviewsPreview from '@/components/ReviewsPreview/ReviewsPreview';
 import PageLayout from '@/components/PageLayout/PageLayout';
 
-type Props = { data: Record<string, string> };
-
-export default function Home({ data }: Props) {
+export default function Home() {
   return (
     <>
       <MainHeader />

@@ -1,17 +1,19 @@
+'use client';
+
 import SectionComponent from '@/components/SectionComponent/SectionComponent';
 import { ReviewCard } from '@/components/_pages/Review/ReviewCard/ReviewCard';
 import classes from './ReviewPage.module.scss';
-
-const reviews = new Array(5).fill('').map((_, i) => ({
-  id: i,
-}));
+import { Review } from '@/assets/types/types';
+import { useNotionData } from '@/notion/NotionDataProvider';
 
 export function ReviewPage() {
+  const { reviewData } = useNotionData();
+
   return (
     <SectionComponent header={'Reviews'}>
       <div className={classes.reviewBlock}>
-        {reviews.map(({ id }) => (
-          <ReviewCard key={id} />
+        {reviewData.map(({ key, ...review }: Review) => (
+          <ReviewCard key={key} review={review} />
         ))}
       </div>
     </SectionComponent>
