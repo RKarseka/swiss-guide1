@@ -1,0 +1,25 @@
+@import '@/styles/variables';
+@import '@/styles/mixins';
+
+.reviewCard {
+  border: 3px solid map-get($colors, grey);
+  height: 468px;
+  border-radius: 10px;
+  padding: map-get($spacing-sizes, 30);
+  overflow: hidden;
+  background-color: map-get($colors, white);
+}
+
+.info {
+  margin-bottom: map-get($spacing-sizes, 3);
+  display: flex;
+  gap: map-get($spacing-sizes, 3);
+}
+
+.image {
+
+}
+
+.reviewText {
+  @include multi-truncate;
+}
