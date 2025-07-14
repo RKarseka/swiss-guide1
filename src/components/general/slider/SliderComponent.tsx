@@ -11,12 +11,17 @@ import ArrowRight from '@/assets/img/icons/arrow_right.svg';
 
 import cx from 'clsx';
 
+type SlideComponentType<T> = React.ComponentType<{ slide: T }>;
+
 type Props<T> = {
-  SlideComponent: any;
+  slideComponent: SlideComponentType<T>;
   slides: T[];
 };
 
-export default function SliderComponent<T>({ slides, SlideComponent }: Props<T>) {
+export default function SliderComponent<T extends { key: React.Key }>({
+  slides,
+  slideComponent: SlideComponent,
+}: Props<T>) {
   const navigation = {
     prevEl: '.swiper-button-prev',
     nextEl: '.swiper-button-next',

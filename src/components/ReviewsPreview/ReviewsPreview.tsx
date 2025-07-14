@@ -16,7 +16,7 @@ export default function ReviewsPreview() {
       header={'Reviews'}
       button={{ link: '/reviews', label: 'ALL REVIEWS' }}
     >
-      <SliderComponent SlideComponent={ReviewsSlide} slides={reviewData} />
+      <SliderComponent slideComponent={ReviewsSlide} slides={reviewData} />
     </SectionComponent>
   );
 }

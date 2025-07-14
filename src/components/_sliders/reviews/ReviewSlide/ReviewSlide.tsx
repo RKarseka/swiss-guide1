@@ -5,7 +5,6 @@ import { Review } from '@/assets/types/types';
 type Props = { slide: Review };
 
 export default function ReviewsSlide({ slide }: Props) {
-  console.log('const review = ', slide);
   return (
     <div className={classes.reviewCard}>
       <div className={classes.info}>
