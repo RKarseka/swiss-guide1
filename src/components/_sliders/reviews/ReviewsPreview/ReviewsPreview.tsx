@@ -5,18 +5,16 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 import SectionComponent from '@/components/SectionComponent/SectionComponent';
-import { useNotionData } from '@/notion/NotionDataProvider';
-import ReviewsSlide from '@/components/_sliders/reviews/ReviewSlide/ReviewSlide';
-import SliderComponent from '@/components/__general/slider/SliderComponent';
+import { useSupabase } from '@/utils/supabase/SupabaseProvider';
 
 export default function ReviewsPreview() {
-  const { reviewData } = useNotionData();
+  const data1 = useSupabase();
   return (
     <SectionComponent
       header={'Reviews'}
       button={{ link: '/reviews', label: 'ALL REVIEWS' }}
     >
-      <SliderComponent slideComponent={ReviewsSlide} slides={reviewData} />
+      {/*<SliderComponent slideComponent={ReviewsSlide} slides={reviewData} />*/}
     </SectionComponent>
   );
 }

@@ -9,10 +9,8 @@ import { hasLocale, NextIntlClientProvider } from 'next-intl';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { getMetadata } from '@/i18n/metadata';
-import { getPages, parseNotionPages } from '@/notion/index';
-import NotionDataProvider from '@/notion/NotionDataProvider';
 
-import { createClient } from '@/utils/supabase/server';
+import { SupabaseProvider } from '@/utils/supabase/SupabaseProvider';
 
 // const notoSans = Noto_Sans({
 //   weight: ['300', '400', '500', '700'],
@@ -45,31 +43,22 @@ type Props = {
   params: { locale: string };
 };
 
-export default async function LocaleLayout({ children, params: { locale } }: Props) {
+export default function LocaleLayout({ children, params: { locale } }: Props) {
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
-
-  const supabase = await createClient();
-
-  const { data: allData, error } = await supabase.from('allData').select('*');
-
-  console.log('const todos = ', allData);
-  console.log('const error = ', error);
-
-  const data = parseNotionPages(await getPages());
 
   return (
     <html lang={locale}>
       <body className={mainFont.className}>
         <NextIntlClientProvider locale={locale}>
-          <NotionDataProvider data={data}>
+          <SupabaseProvider>
             <div className={classes.wrapper}>
               <Navbar />
               <main className={classes.main}>{children}</main>
               <Footer />
             </div>
-          </NotionDataProvider>
+          </SupabaseProvider>
         </NextIntlClientProvider>
       </body>
     </html>
