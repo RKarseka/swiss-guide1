@@ -33,7 +33,7 @@ export default function SliderComponent<T extends { key: React.Key }>({
         modules={[Navigation, Pagination]}
         navigation={navigation}
         loop={true}
-        pagination={{ el: '.swiper-pagination', clickable: true }}
+        pagination={{ el: `.${prefix}-swiper-pagination`, clickable: true }}
         spaceBetween={24}
         slidesPerView={1}
         breakpoints={breakpoints}
@@ -53,7 +53,9 @@ export default function SliderComponent<T extends { key: React.Key }>({
             <ArrowLeft />
           </button>
         </div>
-        <div className={cx('swiper-pagination', classes.swiperPagination)} />
+        <div
+          className={cx(`${prefix}-swiper-pagination`, classes.swiperPagination)}
+        />
         <div className={cx(nextEl.slice(1), classes.swiperButtonNext)}>
           <button>
             <ArrowRight />

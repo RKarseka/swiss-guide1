@@ -1,13 +1,23 @@
+'use client';
+
 import OneTourPreview from '@/components/_pages/OurTours/OneTourPreview/OneTourPreview';
 import classes from './ToursPreview.module.scss';
-import { toursData } from '@/assets/app-data/05tours';
+import SectionComponent from '@/components/SectionComponent/SectionComponent';
+import { useTranslations } from 'next-intl';
+import { useNotionData } from '@/notion/NotionDataProvider';
+import { Tour } from '@/assets/types/types';
 
 export default function ToursPreview() {
+  const t = useTranslations('ToursPage');
+  const { tourData } = useNotionData();
+
   return (
-    <div className={classes.grid}>
-      {toursData.slice(0, 6).map((tour, index) => (
-        <OneTourPreview key={tour.id} tour={tour} index={index}></OneTourPreview>
-      ))}
-    </div>
+    <SectionComponent header={t('title')}>
+      <div className={classes.grid}>
+        {tourData.slice(0, 5).map((tour: Tour) => (
+          <OneTourPreview key={tour.key} tour={tour}></OneTourPreview>
+        ))}
+      </div>
+    </SectionComponent>
   );
 }

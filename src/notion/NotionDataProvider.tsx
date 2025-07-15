@@ -1,7 +1,7 @@
 'use client';
 
 import { createContext, useContext } from 'react';
-import { Blog, Review } from '@/assets/types/types';
+import { Blog, Review, Tour } from '@/assets/types/types';
 
 // Создаем контекст для данных
 export const NotionDataContext = createContext<any>({});
@@ -26,9 +26,10 @@ export default function NotionDataProvider({
   children,
   data,
 }: NotionDataProviderProps) {
-  const value: { blogData: Blog[]; reviewData: Review[] } = {
+  const value: { blogData: Blog[]; reviewData: Review[]; tourData: Tour[] } = {
     blogData: [],
     reviewData: [],
+    tourData: [],
   };
 
   for (const el of data) {
