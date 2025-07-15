@@ -5,43 +5,44 @@ import Image from 'next/image';
 import ClockIcon from '@/assets/img/icons/clock.svg';
 import ReactMarkdown from 'react-markdown';
 import BookNow from '@/components/BookNow/BookNow';
-import { TourData } from '@/assets/app-data/05tours';
 import SectionComponent from '@/components/SectionComponent/SectionComponent';
+import { Tour } from '@/assets/types/types';
 
-type Props = { id: string; tour: TourData };
+type Props = { id: string; tour: Tour };
 
 export function TourInfo({ tour, id }: Props) {
   const {
     title,
     description,
     mainText,
-    duration,
+    length,
     cost,
     attractions,
     shortDescription,
     addons,
     prices,
+    subtitle,
   } = tour;
 
   const [mainSlide, setMainSlide] = useState(0);
 
   return (
-    <SectionComponent header={'Header'}>
+    <SectionComponent header={title}>
       <div className={cx('mb-30', classes.section)}>
-        <h4>{description}</h4>
+        <h4>{subtitle}</h4>
         <div className={classes.cost}>
           <div className={classes.duration}>
             <ClockIcon width={25} height={25} />
-            <h5>{duration?.toUpperCase()}</h5>
+            <h5>{length?.toUpperCase()}</h5>
           </div>
           <h5>{cost?.toUpperCase()}</h5>
         </div>
         <div className={classes.mainText}>
           <div>
-            <ReactMarkdown>{mainText}</ReactMarkdown>
+            <ReactMarkdown>{description}</ReactMarkdown>
           </div>
           <div className={classes.mainSlide}>
-            <Image src={`/images/tours/tour${id}/01.jpg`} alt={tour.title} fill />
+            <Image src={`/images/tours/01.jpg`} alt={tour.title} fill />
           </div>
         </div>
 

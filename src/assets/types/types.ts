@@ -16,12 +16,15 @@ export type Tour = {
   addons?: string;
   attractions?: string[];
   cost: string;
+  // cost: string;
   description: string;
-  duration: string;
+  length: string;
   fullWidth?: boolean;
   mainText: string;
-  prices?: { cost: string; title: string; notification?: string }[];
   pdescription?: string;
-  title: string;
+  prices?: { cost: string; title: string; notification?: string }[];
   ptitle: string;
+  shortDescription: string;
+  subtitle: string;
+  title: string;
 };

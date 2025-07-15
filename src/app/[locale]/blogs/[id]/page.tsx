@@ -2,9 +2,10 @@
 
 import PageLayout from '@/components/PageLayout/PageLayout';
 import { useParams } from 'next/navigation';
-import blogsData, { Blog } from '@/assets/app-data/07blogs';
+import blogsData from '@/assets/app-data/07blogs';
 import BlogPage from '@/components/_pages/Blog/BlogPage/BlogPage';
 import { OtherTours } from '@/app/[locale]/tours/[id]/components/OtherTours/OtherTours';
+import { getPage } from '@/utils/helpers';
 
 // export function generateMetadata(key: string) {
 //   return blogsData.find((i) => i.key === key) || blogsData[0];
@@ -19,7 +20,7 @@ export default function BlogPostPage() {
   const id = params?.id as string;
   if (!id) return null;
 
-  const blog: Blog = blogsData.find((i) => i.key === id) || blogsData[0];
+  const blog = getPage(blogsData, id);
   // const prevPost = currentIndex > 0 ? posts[currentIndex - 1] : null;
   // const nextPost = currentIndex < posts.length - 1 ? posts[currentIndex + 1] : null;
 
