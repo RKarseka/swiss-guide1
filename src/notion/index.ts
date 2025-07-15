@@ -9,7 +9,6 @@ export async function getPages() {
 }
 
 export function parseNotionPages(pages: any[]) {
-  console.log('const pages = ', pages[13]);
   return pages.map((page) => {
     const props = page.properties;
     const result: Record<string, any> = {};

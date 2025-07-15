@@ -15,7 +15,6 @@ type TourPreview = {
 type Props = { tour: Tour };
 
 export default function OneTourPreview({ tour }: Props) {
-  console.log('const tour = ', tour.fullWidth);
   const { key, pdescription, description, ptitle, title, fullWidth } = tour;
   return (
     <Link

@@ -18,7 +18,6 @@ export default function TourPage() {
 
   const tour = getPage<Tour>(tourData, id);
   const { title } = tour;
-  console.log('const tour = ', tour);
   return (
     <PageLayout title={title}>
       <TourInfo tour={tour} id={id as string} />

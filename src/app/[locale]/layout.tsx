@@ -12,6 +12,8 @@ import { getMetadata } from '@/i18n/metadata';
 import { getPages, parseNotionPages } from '@/notion/index';
 import NotionDataProvider from '@/notion/NotionDataProvider';
 
+import { createClient } from '@/utils/supabase/server';
+
 // const notoSans = Noto_Sans({
 //   weight: ['300', '400', '500', '700'],
 //   subsets: ['latin', 'cyrillic'],
@@ -47,6 +49,13 @@ export default async function LocaleLayout({ children, params: { locale } }: Pro
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
+
+  const supabase = await createClient();
+
+  const { data: allData, error } = await supabase.from('allData').select('*');
+
+  console.log('const todos = ', allData);
+  console.log('const error = ', error);
 
   const data = parseNotionPages(await getPages());
 
